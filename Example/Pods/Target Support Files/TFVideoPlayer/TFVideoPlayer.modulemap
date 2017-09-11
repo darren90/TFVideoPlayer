@@ -1,0 +1,6 @@
+framework module TFVideoPlayer {
+  umbrella header "TFVideoPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

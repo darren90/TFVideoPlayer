@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027B5E054EC807165E93FC1331C4D2C2 /* TFPlayer_unlock-nor.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201384BB82A7A206F363E09E75EE34 /* TFPlayer_unlock-nor.png */; };
+		07FE1754A5905DCBAD1D0CA1095C0889 /* ForwardBackView.h in Headers */ = {isa = PBXBuildFile; fileRef = C819A7C4F98CA8446B98190D9F8CB0E3 /* ForwardBackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BA4942CBAED3A280832DFF7AA130D78 /* TFPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D00FD42D2FCCA966957D6AD5D7117BD /* TFPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EC717A184A19B7D7E3570CAC0C3FB5C /* VMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 872408A88353E35623ACF9F626EB740B /* VMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		100F2F4C56F67BB0CF255C5A1F07E009 /* VKVideoPlayer_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A755A0E7D8849FA57AFD1BAD083EEAC /* VKVideoPlayer_play.png */; };
+		1656E329548BCEFFDE93D5F5B3F9F75F /* TFPlayerTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E27F412E62C42BF158333AA83052ADE0 /* TFPlayerTools.m */; };
+		1836B9C7D4D71EF306CC237D23B76122 /* BrightnessView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C8621A0D5DA9FDFE24ABE5F14CDE4DE /* BrightnessView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1ADC7450C70B6B6D666826E72EB9381B /* VKVideoPlayer_pause_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B648A503BA049E8508B22BDF5780564A /* VKVideoPlayer_pause_big@2x.png */; };
+		1D02ABA6D0D52FA985AE33AE4CE7F9A0 /* Pods-TFVideoPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B80414A6AED2F04665B85B20921AE1C7 /* Pods-TFVideoPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D6849ED608736BCC512B5C2ECF49E6B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBD85D8B0BA24BEDFD0B8AF262D45A5 /* AVFoundation.framework */; };
+		21D091973763D2F262E5332DE19E8AA1 /* BrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAB7A9C9393FEE0AD3F219136BA9EEE /* BrightnessView.m */; };
+		2E3FC6236FE0E083DD5D01FE60A78F7D /* VMediaExtracterDef.h in Headers */ = {isa = PBXBuildFile; fileRef = E252A3728DB54ACB1D51A1B6569090F3 /* VMediaExtracterDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5D8215805420CB302585FD6EE4D765 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE54C4E7249B233BE551F5C508A4BAFC /* CoreVideo.framework */; };
+		35041C87F9210EBE69E9DE2F34054658 /* audioTrackIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F545BCC9AB0162130FA54CD394BE1E35 /* audioTrackIcon@2x.png */; };
+		36B9FC9161F7DAA2F761BDCFA7181B89 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0402625B4F5BA130E03DB231397A81 /* AudioToolbox.framework */; };
+		38C1DC02054D63367B2CDF602AE19E92 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303503D43CA49B656A524B36EEC62DDB /* OpenGLES.framework */; };
+		3F1C3AF3734403CFC8263A5DB91C18C4 /* nav_btn_back_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E55ECBC2BA5388D2377B2542607F468D /* nav_btn_back_n@2x.png */; };
+		452E6E8C86ABE4A173580FCB6FD77BF3 /* TFPlayer_slider@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F8100147D5F644BAC62B8730FCD60 /* TFPlayer_slider@2x.png */; };
+		45A86F942FF33C5DCBFBB284EB3BB021 /* pb-seek-bar-fr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B513367198240D24B96854105DE6913 /* pb-seek-bar-fr@2x.png */; };
+		46595F2FF24214208D3A9CDAE697AD9A /* Vitamio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ACE19DFC1F419C482B6FBE21170E163 /* Vitamio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4913EE5ECB9888FEB44F8206BFE2A573 /* TFPlayer_slider.png in Resources */ = {isa = PBXBuildFile; fileRef = C960E4E3C7CEB498DD522FECEE37C12A /* TFPlayer_slider.png */; };
+		4A8C885C29A246DBD06CDEA0BCDA3E9F /* TFVideoPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D94664F53B47E5C3E7EEF37A0FF41864 /* TFVideoPlayer-dummy.m */; };
+		4D8602CF8A2CE43D72AE25949A44DCF6 /* VSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 955161C69B514A1FA3903B56151CBB0D /* VSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		552E85F649BDA13E7A09277B721EAC7F /* UISlider+VDTrackHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = DA70A69243F94460C6A8BB3EC14B474F /* UISlider+VDTrackHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B14C0A05822100C78417C6ACB21551D /* TFVSegmentSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CE91D10B5B5343D5B21D5BE8922480F /* TFVSegmentSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		637BB7FF654C7343FFD2F4E202587EC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825BAD8B31A629AF7F75F3864EF99DC6 /* Foundation.framework */; };
+		657040C8E1DAFF5A908C7B407464EF36 /* TFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C210DD7B4F6E812B3926586C543F0A3C /* TFPlayerController.m */; };
+		65A08D3547996B30873E1F6F7E61C189 /* TFPlayer_fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D55E065695194953230E4EAC8FAB64A /* TFPlayer_fullscreen@2x.png */; };
+		675444C49F5951D6348E29B9E3F5CB79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B9161313A93294EAA30F08BD3C6113 /* CoreGraphics.framework */; };
+		6C593DD2E784C4BF371B2DC6CDB7C471 /* VMediaPlayerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A535DBECB97A4B5841D495B694F3FCE /* VMediaPlayerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EC3552917D657C09129607EEA4483DB /* nav_btn_back_n.png in Resources */ = {isa = PBXBuildFile; fileRef = CFAD82B3801C52E72CC947479F31A9B0 /* nav_btn_back_n.png */; };
+		7069D6DA7B4E258155345884A30F9CD2 /* pb-seek-bar-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA1538A95BA617DDB26AB22DD2539A /* pb-seek-bar-bg@2x.png */; };
+		7B4D39D09872B1BAE22C869DE270D02C /* TFPlayer_shrinkscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F7829E4EB45296E951A15A532CFFD7BF /* TFPlayer_shrinkscreen.png */; };
+		7CD2C0AFD2DB97C4291E854EF10E575D /* TFVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE2792F109C02C0353E9591B569890 /* TFVideoPlayer.m */; };
+		7F272B8DB0CEBEB7B35D4FF68FE1977E /* VKVideoPlayer_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF7613CC7E73981F6E6DDEC516257F9 /* VKVideoPlayer_pause@2x.png */; };
+		7F7C3C5B39AA2E73F2CEC36732F0DF35 /* TFPlayer_shrinkscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1401DA9B65AD839DD8D9A175F19BAA60 /* TFPlayer_shrinkscreen@3x.png */; };
+		80ED1D537FF4C1950669A48267C18394 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B620DB8E2FB95A794B9C87BB70DF7F80 /* MediaPlayer.framework */; };
+		8C6658B4EDB506A79B6CEBAE443CB136 /* TFVideoPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B88600584418B0AF60ADF6F527B50B6 /* TFVideoPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F50A48329FB6C9C7862CE2422B9B3B6 /* TFVSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA9FFBC5CFBF7D53F00331D7E6E1414 /* TFVSegmentSlider.m */; };
+		9031E45542FA2E3AE9BF6047F3E37FF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825BAD8B31A629AF7F75F3864EF99DC6 /* Foundation.framework */; };
+		916C324E181BEFDC9112E741886F7B52 /* VMediaExtracter.h in Headers */ = {isa = PBXBuildFile; fileRef = F468CD5AF1258729F4D26913508D46D2 /* VMediaExtracter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98B8F062E2B58182AFFC52B74EAF16F9 /* TFPlayer_slider@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B242DF58B17E4932AB4ECCFDA97D4B /* TFPlayer_slider@3x.png */; };
+		A0C06353CCABFC2DDD7771CE66D31570 /* TFVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C128AB259DDF7CFA87FE75B3C162A0 /* TFVideoPlayerView.m */; };
+		A9578450A370B643D95E84D025448B14 /* TFVideoPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 041EB4747A173404EEE024E78A060700 /* TFVideoPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF81693DBC567CED983E35A4733EFB50 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90A67CECF296AEFD0BFC23D8EC1E04D /* CoreMedia.framework */; };
+		B5D90F974CC208297D5B1CE75C9A9DA4 /* TFPlayer_unlock-nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 087D1BC9657938A3D93F46AFAF5B8426 /* TFPlayer_unlock-nor@2x.png */; };
+		B6A8E5070B4F6911E5272B09B84A81B9 /* audioTrackIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B335DDB30FA0CBD58676D099CF4C84C9 /* audioTrackIcon.png */; };
+		B6F2BC6EA5CD82995F2041245B4F2B8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0E2DB904F50EF27FA8963B8A1714FC /* QuartzCore.framework */; };
+		B7AD6E4B69D107F9E30FFC171D29B39A /* Pods-TFVideoPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 109967618F8593E0FE96832B9FA6E9D0 /* Pods-TFVideoPlayer_Example-dummy.m */; };
+		B7D64478BC1518DCF1DB113D4C18C5ED /* UISlider+VDTrackHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = E394DFBE7BEFA12D05D953DC27D9FA12 /* UISlider+VDTrackHeight.m */; };
+		BC3989654D194F9B12D5E28374367575 /* ForwardBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD739F37D2144194453285F46AEB250 /* ForwardBackView.m */; };
+		BDD947E54B73B74AA5D6E220F56C1EC0 /* VKVideoPlayer_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 46754561088F3DBE4500F5B883FADF4C /* VKVideoPlayer_pause.png */; };
+		BE3FED2D9A639DCF5438415286BC492C /* VPlayerManageDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C8E9530FA7CFADE72A67C4CFFF7E0A /* VPlayerManageDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0F9D10E055391F07DEE2623D328A503 /* pb-seek-bar-btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BA5E55519A8228261C0177C29D7D07C /* pb-seek-bar-btn@2x.png */; };
+		C56FBA40C121F3EE2F0501F66EDF7BE4 /* TFPlayer_lock-nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 752FF25ED9ABCA5338FEAD929857A498 /* TFPlayer_lock-nor@3x.png */; };
+		C81B98422D585B94921BE0DE542AC573 /* TFPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 916AB131FF9F9243F9F6B2AC44B3C1C0 /* TFPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0432F969616AABE91A27EFED423AB47 /* VKVideoPlayer_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD01F8EC6FD2A94151F6EB30CACDBD19 /* VKVideoPlayer_play@2x.png */; };
+		D363C87119740030F0B20350CEAD5654 /* nav_btn_back_n@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42F42B467251E4949DDE154A75FED7D /* nav_btn_back_n@3x.png */; };
+		D5EAB22C761C270704EEED55188041D6 /* TFPlayer_lock-nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5498F1AB33A1B8E99CC253F43C80EF /* TFPlayer_lock-nor@2x.png */; };
+		D61AE2AABBE572F0E403397391EAEA87 /* VKVideoPlayer_play_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB9E38368045238116FDF28CCE8503D /* VKVideoPlayer_play_big@2x.png */; };
+		E0696F8473F9B9C57A877B4EBF5A2170 /* TFPlayerTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C1945066FC9839887034ADDDE6DF2E1 /* TFPlayerTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27D09BEF49D03FDCE5FAFF5BAD80174 /* Player_brightness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C54EF0D541A38F5FD9CD986B9DDD4E2 /* Player_brightness@2x.png */; };
+		E597E8DA3568F01076797C86DBD5BAD8 /* VKVideoPlayer_play_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6B4BE22AC56DD261B2B6153F84AB48 /* VKVideoPlayer_play_big.png */; };
+		E5C09028A0140DF12F63AAD8BE92F511 /* TFPlayer_shrinkscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23C69190966F9D2A87D5059993E6DE2B /* TFPlayer_shrinkscreen@2x.png */; };
+		E77039CCC479C3E9B7B2354A06BACFB4 /* TFPlayer_unlock-nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F01404103CA37B2510BD9BE21F7C1CCB /* TFPlayer_unlock-nor@3x.png */; };
+		E7CFB2DC23BEAF0D5BEFB2EDDBAC0804 /* VKVideoPlayer_pause_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FD44F3519773C2AFF96009E1A4B5A1 /* VKVideoPlayer_pause_big.png */; };
+		E9789DCF820E31803490D063B8B1F604 /* TFVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FACD3E084373FCF5793A71B2927DD5A1 /* TFVideoPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEA9D62631FE28109C0F9F3847481B1B /* TFPlayer_lock-nor.png in Resources */ = {isa = PBXBuildFile; fileRef = A9764F340A0FFAEE9D371F23E8D62810 /* TFPlayer_lock-nor.png */; };
+		F127882F1CB14943B9B581ED23A33BE8 /* TFPlayer_fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BE50B9D2E1C59B8BE5A6282A760887BF /* TFPlayer_fullscreen.png */; };
+		F73539BB08A0CDEAE938BA76B741079F /* VDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B150FEC70135A24714DA87D12139B83 /* VDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC7471C30B41993D7B7A6EC59E7DE911 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5444BD7D045181BD4AA72FFD74B20FC /* UIKit.framework */; };
+		FEE8B914363D478CE3C7A83A0ADE6CCF /* TFPlayer_fullscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D51D8CD9716A3E99CD681E9EF59F293F /* TFPlayer_fullscreen@3x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE330980ABD2B23F8FAA43BE2F4DD21A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 954BF6D86976E46FDDB5487B3F6C55FF;
+			remoteInfo = TFVideoPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01FD44F3519773C2AFF96009E1A4B5A1 /* VKVideoPlayer_pause_big.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = VKVideoPlayer_pause_big.png; path = TFVideoPlayer/Assets/VKVideoPlayer_pause_big.png; sourceTree = "<group>"; };
+		041EB4747A173404EEE024E78A060700 /* TFVideoPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TFVideoPlayer-umbrella.h"; sourceTree = "<group>"; };
+		0754C6557555C08877543529E5075119 /* Pods-TFVideoPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TFVideoPlayer_Example.modulemap"; sourceTree = "<group>"; };
+		087D1BC9657938A3D93F46AFAF5B8426 /* TFPlayer_unlock-nor@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_unlock-nor@2x.png"; path = "TFVideoPlayer/Assets/TFPlayer_unlock-nor@2x.png"; sourceTree = "<group>"; };
+		0B150FEC70135A24714DA87D12139B83 /* VDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VDefines.h; sourceTree = "<group>"; };
+		0D00FD42D2FCCA966957D6AD5D7117BD /* TFPlayerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFPlayerController.h; path = TFVideoPlayer/Classes/TFPlayerController.h; sourceTree = "<group>"; };
+		109967618F8593E0FE96832B9FA6E9D0 /* Pods-TFVideoPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TFVideoPlayer_Example-dummy.m"; sourceTree = "<group>"; };
+		1401DA9B65AD839DD8D9A175F19BAA60 /* TFPlayer_shrinkscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_shrinkscreen@3x.png"; path = "TFVideoPlayer/Assets/TFPlayer_shrinkscreen@3x.png"; sourceTree = "<group>"; };
+		1A535DBECB97A4B5841D495B694F3FCE /* VMediaPlayerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaPlayerDelegate.h; sourceTree = "<group>"; };
+		1AC5FAC23F8607E218608F2A085050B9 /* TFVideoPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TFVideoPlayer-prefix.pch"; sourceTree = "<group>"; };
+		1FAB1627B497601360F160078543F34F /* TFVideoPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TFVideoPlayer.xcconfig; sourceTree = "<group>"; };
+		23C69190966F9D2A87D5059993E6DE2B /* TFPlayer_shrinkscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_shrinkscreen@2x.png"; path = "TFVideoPlayer/Assets/TFPlayer_shrinkscreen@2x.png"; sourceTree = "<group>"; };
+		2E0E2DB904F50EF27FA8963B8A1714FC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		303503D43CA49B656A524B36EEC62DDB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		31C5EBA8E4754244745C94162AFA229D /* Pods-TFVideoPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFVideoPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		37AE2792F109C02C0353E9591B569890 /* TFVideoPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TFVideoPlayer.m; sourceTree = "<group>"; };
+		46754561088F3DBE4500F5B883FADF4C /* VKVideoPlayer_pause.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = VKVideoPlayer_pause.png; path = TFVideoPlayer/Assets/VKVideoPlayer_pause.png; sourceTree = "<group>"; };
+		4A0402625B4F5BA130E03DB231397A81 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		4ACE19DFC1F419C482B6FBE21170E163 /* Vitamio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Vitamio.h; sourceTree = "<group>"; };
+		4B513367198240D24B96854105DE6913 /* pb-seek-bar-fr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pb-seek-bar-fr@2x.png"; path = "TFVideoPlayer/Assets/pb-seek-bar-fr@2x.png"; sourceTree = "<group>"; };
+		4EDA1538A95BA617DDB26AB22DD2539A /* pb-seek-bar-bg@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pb-seek-bar-bg@2x.png"; path = "TFVideoPlayer/Assets/pb-seek-bar-bg@2x.png"; sourceTree = "<group>"; };
+		54C128AB259DDF7CFA87FE75B3C162A0 /* TFVideoPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TFVideoPlayerView.m; sourceTree = "<group>"; };
+		58C8E9530FA7CFADE72A67C4CFFF7E0A /* VPlayerManageDef.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VPlayerManageDef.h; sourceTree = "<group>"; };
+		5BBD85D8B0BA24BEDFD0B8AF262D45A5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		5C1945066FC9839887034ADDDE6DF2E1 /* TFPlayerTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TFPlayerTools.h; sourceTree = "<group>"; };
+		6E9023F4AE9297D27E73BC06C40B8784 /* libffmpeg.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libffmpeg.a; path = "TFVideoPlayer/Classes/Vitamio-online/libffmpeg.a"; sourceTree = "<group>"; };
+		6EF7613CC7E73981F6E6DDEC516257F9 /* VKVideoPlayer_pause@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VKVideoPlayer_pause@2x.png"; path = "TFVideoPlayer/Assets/VKVideoPlayer_pause@2x.png"; sourceTree = "<group>"; };
+		752FF25ED9ABCA5338FEAD929857A498 /* TFPlayer_lock-nor@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_lock-nor@3x.png"; path = "TFVideoPlayer/Assets/TFPlayer_lock-nor@3x.png"; sourceTree = "<group>"; };
+		7A0B16F68E252F9FA9391AD12CD1E60F /* Pods_TFVideoPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TFVideoPlayer_Example.framework; path = "Pods-TFVideoPlayer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A755A0E7D8849FA57AFD1BAD083EEAC /* VKVideoPlayer_play.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = VKVideoPlayer_play.png; path = TFVideoPlayer/Assets/VKVideoPlayer_play.png; sourceTree = "<group>"; };
+		7AD739F37D2144194453285F46AEB250 /* ForwardBackView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ForwardBackView.m; sourceTree = "<group>"; };
+		7B88600584418B0AF60ADF6F527B50B6 /* TFVideoPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TFVideoPlayerView.h; sourceTree = "<group>"; };
+		7BA5E55519A8228261C0177C29D7D07C /* pb-seek-bar-btn@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pb-seek-bar-btn@2x.png"; path = "TFVideoPlayer/Assets/pb-seek-bar-btn@2x.png"; sourceTree = "<group>"; };
+		7D55E065695194953230E4EAC8FAB64A /* TFPlayer_fullscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_fullscreen@2x.png"; path = "TFVideoPlayer/Assets/TFPlayer_fullscreen@2x.png"; sourceTree = "<group>"; };
+		7D6B4BE22AC56DD261B2B6153F84AB48 /* VKVideoPlayer_play_big.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = VKVideoPlayer_play_big.png; path = TFVideoPlayer/Assets/VKVideoPlayer_play_big.png; sourceTree = "<group>"; };
+		825BAD8B31A629AF7F75F3864EF99DC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		872408A88353E35623ACF9F626EB740B /* VMediaPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaPlayer.h; sourceTree = "<group>"; };
+		8A5C24C57B580024F12A988B00D33CA2 /* libopenssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopenssl.a; path = "TFVideoPlayer/Classes/Vitamio-online/libopenssl.a"; sourceTree = "<group>"; };
+		8C54EF0D541A38F5FD9CD986B9DDD4E2 /* Player_brightness@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Player_brightness@2x.png"; path = "TFVideoPlayer/Assets/Player_brightness@2x.png"; sourceTree = "<group>"; };
+		916AB131FF9F9243F9F6B2AC44B3C1C0 /* TFPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TFPlayer.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95447BC1C2AF7203C17A2C4CE762EC6B /* Pods-TFVideoPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFVideoPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		955161C69B514A1FA3903B56151CBB0D /* VSingleton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VSingleton.h; sourceTree = "<group>"; };
+		9C8621A0D5DA9FDFE24ABE5F14CDE4DE /* BrightnessView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BrightnessView.h; sourceTree = "<group>"; };
+		9CE91D10B5B5343D5B21D5BE8922480F /* TFVSegmentSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TFVSegmentSlider.h; sourceTree = "<group>"; };
+		9E0C451D9D3F339A6F5AD903B98051CD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5444BD7D045181BD4AA72FFD74B20FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A9201384BB82A7A206F363E09E75EE34 /* TFPlayer_unlock-nor.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_unlock-nor.png"; path = "TFVideoPlayer/Assets/TFPlayer_unlock-nor.png"; sourceTree = "<group>"; };
+		A9764F340A0FFAEE9D371F23E8D62810 /* TFPlayer_lock-nor.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_lock-nor.png"; path = "TFVideoPlayer/Assets/TFPlayer_lock-nor.png"; sourceTree = "<group>"; };
+		AA207DA3522333368AF992F0CE6DA9CA /* Pods-TFVideoPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TFVideoPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ACB9E38368045238116FDF28CCE8503D /* VKVideoPlayer_play_big@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VKVideoPlayer_play_big@2x.png"; path = "TFVideoPlayer/Assets/VKVideoPlayer_play_big@2x.png"; sourceTree = "<group>"; };
+		ADAB7A9C9393FEE0AD3F219136BA9EEE /* BrightnessView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BrightnessView.m; sourceTree = "<group>"; };
+		AE54C4E7249B233BE551F5C508A4BAFC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		B335DDB30FA0CBD58676D099CF4C84C9 /* audioTrackIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = audioTrackIcon.png; path = TFVideoPlayer/Assets/audioTrackIcon.png; sourceTree = "<group>"; };
+		B620DB8E2FB95A794B9C87BB70DF7F80 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		B648A503BA049E8508B22BDF5780564A /* VKVideoPlayer_pause_big@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VKVideoPlayer_pause_big@2x.png"; path = "TFVideoPlayer/Assets/VKVideoPlayer_pause_big@2x.png"; sourceTree = "<group>"; };
+		B80414A6AED2F04665B85B20921AE1C7 /* Pods-TFVideoPlayer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TFVideoPlayer_Example-umbrella.h"; sourceTree = "<group>"; };
+		BD01F8EC6FD2A94151F6EB30CACDBD19 /* VKVideoPlayer_play@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VKVideoPlayer_play@2x.png"; path = "TFVideoPlayer/Assets/VKVideoPlayer_play@2x.png"; sourceTree = "<group>"; };
+		BE50B9D2E1C59B8BE5A6282A760887BF /* TFPlayer_fullscreen.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TFPlayer_fullscreen.png; path = TFVideoPlayer/Assets/TFPlayer_fullscreen.png; sourceTree = "<group>"; };
+		C210DD7B4F6E812B3926586C543F0A3C /* TFPlayerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFPlayerController.m; path = TFVideoPlayer/Classes/TFPlayerController.m; sourceTree = "<group>"; };
+		C2B9161313A93294EAA30F08BD3C6113 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		C819A7C4F98CA8446B98190D9F8CB0E3 /* ForwardBackView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ForwardBackView.h; sourceTree = "<group>"; };
+		C960E4E3C7CEB498DD522FECEE37C12A /* TFPlayer_slider.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TFPlayer_slider.png; path = TFVideoPlayer/Assets/TFPlayer_slider.png; sourceTree = "<group>"; };
+		CFAD82B3801C52E72CC947479F31A9B0 /* nav_btn_back_n.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = nav_btn_back_n.png; path = TFVideoPlayer/Assets/nav_btn_back_n.png; sourceTree = "<group>"; };
+		D51D8CD9716A3E99CD681E9EF59F293F /* TFPlayer_fullscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_fullscreen@3x.png"; path = "TFVideoPlayer/Assets/TFPlayer_fullscreen@3x.png"; sourceTree = "<group>"; };
+		D94664F53B47E5C3E7EEF37A0FF41864 /* TFVideoPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TFVideoPlayer-dummy.m"; sourceTree = "<group>"; };
+		DA70A69243F94460C6A8BB3EC14B474F /* UISlider+VDTrackHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISlider+VDTrackHeight.h"; sourceTree = "<group>"; };
+		DC3065938FD8DE6FE515CCC488BD21D2 /* Pods-TFVideoPlayer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TFVideoPlayer_Example-resources.sh"; sourceTree = "<group>"; };
+		E1D148B47D8186258950905D9E9FC916 /* libVitamio.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libVitamio.a; path = "TFVideoPlayer/Classes/Vitamio-online/libVitamio.a"; sourceTree = "<group>"; };
+		E252A3728DB54ACB1D51A1B6569090F3 /* VMediaExtracterDef.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaExtracterDef.h; sourceTree = "<group>"; };
+		E27F412E62C42BF158333AA83052ADE0 /* TFPlayerTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TFPlayerTools.m; sourceTree = "<group>"; };
+		E394DFBE7BEFA12D05D953DC27D9FA12 /* UISlider+VDTrackHeight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISlider+VDTrackHeight.m"; sourceTree = "<group>"; };
+		E4B242DF58B17E4932AB4ECCFDA97D4B /* TFPlayer_slider@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_slider@3x.png"; path = "TFVideoPlayer/Assets/TFPlayer_slider@3x.png"; sourceTree = "<group>"; };
+		E4CA145F2E4DC6AB5D519BE0515DE56E /* TFVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TFVideoPlayer.framework; path = TFVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5416CB0F561DAD6D146639FC9EEC1C8 /* Pods-TFVideoPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TFVideoPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
+		E55ECBC2BA5388D2377B2542607F468D /* nav_btn_back_n@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "nav_btn_back_n@2x.png"; path = "TFVideoPlayer/Assets/nav_btn_back_n@2x.png"; sourceTree = "<group>"; };
+		E58D22DC4CFBC5C56DB2E9E5F4356A6E /* TFVideoPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TFVideoPlayer.modulemap; sourceTree = "<group>"; };
+		E90A67CECF296AEFD0BFC23D8EC1E04D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		EA5498F1AB33A1B8E99CC253F43C80EF /* TFPlayer_lock-nor@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_lock-nor@2x.png"; path = "TFVideoPlayer/Assets/TFPlayer_lock-nor@2x.png"; sourceTree = "<group>"; };
+		EA8F8100147D5F644BAC62B8730FCD60 /* TFPlayer_slider@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_slider@2x.png"; path = "TFVideoPlayer/Assets/TFPlayer_slider@2x.png"; sourceTree = "<group>"; };
+		EB8115391F118166B954EA9380CB170E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEA9FFBC5CFBF7D53F00331D7E6E1414 /* TFVSegmentSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TFVSegmentSlider.m; sourceTree = "<group>"; };
+		F01404103CA37B2510BD9BE21F7C1CCB /* TFPlayer_unlock-nor@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TFPlayer_unlock-nor@3x.png"; path = "TFVideoPlayer/Assets/TFPlayer_unlock-nor@3x.png"; sourceTree = "<group>"; };
+		F42F42B467251E4949DDE154A75FED7D /* nav_btn_back_n@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "nav_btn_back_n@3x.png"; path = "TFVideoPlayer/Assets/nav_btn_back_n@3x.png"; sourceTree = "<group>"; };
+		F468CD5AF1258729F4D26913508D46D2 /* VMediaExtracter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VMediaExtracter.h; sourceTree = "<group>"; };
+		F545BCC9AB0162130FA54CD394BE1E35 /* audioTrackIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "audioTrackIcon@2x.png"; path = "TFVideoPlayer/Assets/audioTrackIcon@2x.png"; sourceTree = "<group>"; };
+		F7829E4EB45296E951A15A532CFFD7BF /* TFPlayer_shrinkscreen.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TFPlayer_shrinkscreen.png; path = TFVideoPlayer/Assets/TFPlayer_shrinkscreen.png; sourceTree = "<group>"; };
+		FACD3E084373FCF5793A71B2927DD5A1 /* TFVideoPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TFVideoPlayer.h; sourceTree = "<group>"; };
+		FB22CA6C29D1DBB0B6F6F4AB1C1D1606 /* Pods-TFVideoPlayer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TFVideoPlayer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EE58705E9DAE206EFC14EC81881E7D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637BB7FF654C7343FFD2F4E202587EC0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42AC0341C40CED50BE7CD6199C794D2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36B9FC9161F7DAA2F761BDCFA7181B89 /* AudioToolbox.framework in Frameworks */,
+				1D6849ED608736BCC512B5C2ECF49E6B /* AVFoundation.framework in Frameworks */,
+				675444C49F5951D6348E29B9E3F5CB79 /* CoreGraphics.framework in Frameworks */,
+				AF81693DBC567CED983E35A4733EFB50 /* CoreMedia.framework in Frameworks */,
+				2F5D8215805420CB302585FD6EE4D765 /* CoreVideo.framework in Frameworks */,
+				9031E45542FA2E3AE9BF6047F3E37FF9 /* Foundation.framework in Frameworks */,
+				80ED1D537FF4C1950669A48267C18394 /* MediaPlayer.framework in Frameworks */,
+				38C1DC02054D63367B2CDF602AE19E92 /* OpenGLES.framework in Frameworks */,
+				B6F2BC6EA5CD82995F2041245B4F2B8E /* QuartzCore.framework in Frameworks */,
+				FC7471C30B41993D7B7A6EC59E7DE911 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FF489D1788C8F15E790EF9913C2C6FB /* Pods-TFVideoPlayer_Example */ = {
+			isa = PBXGroup;
+			children = (
+				9E0C451D9D3F339A6F5AD903B98051CD /* Info.plist */,
+				0754C6557555C08877543529E5075119 /* Pods-TFVideoPlayer_Example.modulemap */,
+				AA207DA3522333368AF992F0CE6DA9CA /* Pods-TFVideoPlayer_Example-acknowledgements.markdown */,
+				FB22CA6C29D1DBB0B6F6F4AB1C1D1606 /* Pods-TFVideoPlayer_Example-acknowledgements.plist */,
+				109967618F8593E0FE96832B9FA6E9D0 /* Pods-TFVideoPlayer_Example-dummy.m */,
+				E5416CB0F561DAD6D146639FC9EEC1C8 /* Pods-TFVideoPlayer_Example-frameworks.sh */,
+				DC3065938FD8DE6FE515CCC488BD21D2 /* Pods-TFVideoPlayer_Example-resources.sh */,
+				B80414A6AED2F04665B85B20921AE1C7 /* Pods-TFVideoPlayer_Example-umbrella.h */,
+				95447BC1C2AF7203C17A2C4CE762EC6B /* Pods-TFVideoPlayer_Example.debug.xcconfig */,
+				31C5EBA8E4754244745C94162AFA229D /* Pods-TFVideoPlayer_Example.release.xcconfig */,
+			);
+			name = "Pods-TFVideoPlayer_Example";
+			path = "Target Support Files/Pods-TFVideoPlayer_Example";
+			sourceTree = "<group>";
+		};
+		10E4440EB31543ADB5F0FC58D9A6C4BF /* Vitamio-online */ = {
+			isa = PBXGroup;
+			children = (
+				2EB989A6C1851AF40FD3967E82630570 /* include */,
+			);
+			name = "Vitamio-online";
+			path = "TFVideoPlayer/Classes/Vitamio-online";
+			sourceTree = "<group>";
+		};
+		2E911F4E78E88F47811CEC92CD5986FF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB8115391F118166B954EA9380CB170E /* Info.plist */,
+				E58D22DC4CFBC5C56DB2E9E5F4356A6E /* TFVideoPlayer.modulemap */,
+				1FAB1627B497601360F160078543F34F /* TFVideoPlayer.xcconfig */,
+				D94664F53B47E5C3E7EEF37A0FF41864 /* TFVideoPlayer-dummy.m */,
+				1AC5FAC23F8607E218608F2A085050B9 /* TFVideoPlayer-prefix.pch */,
+				041EB4747A173404EEE024E78A060700 /* TFVideoPlayer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TFVideoPlayer";
+			sourceTree = "<group>";
+		};
+		2EB989A6C1851AF40FD3967E82630570 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				55C9637DDC71643B71504A1DDCCA5B2B /* Vitamio */,
+			);
+			name = include;
+			path = include;
+			sourceTree = "<group>";
+		};
+		37F4E0547D5B36AF51869CAA83DD887A /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C04306C1D21AFFA95A9576EF7A0ED732 /* TFVideoPlayer */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		55C9637DDC71643B71504A1DDCCA5B2B /* Vitamio */ = {
+			isa = PBXGroup;
+			children = (
+				0B150FEC70135A24714DA87D12139B83 /* VDefines.h */,
+				4ACE19DFC1F419C482B6FBE21170E163 /* Vitamio.h */,
+				F468CD5AF1258729F4D26913508D46D2 /* VMediaExtracter.h */,
+				E252A3728DB54ACB1D51A1B6569090F3 /* VMediaExtracterDef.h */,
+				872408A88353E35623ACF9F626EB740B /* VMediaPlayer.h */,
+				1A535DBECB97A4B5841D495B694F3FCE /* VMediaPlayerDelegate.h */,
+				58C8E9530FA7CFADE72A67C4CFFF7E0A /* VPlayerManageDef.h */,
+				955161C69B514A1FA3903B56151CBB0D /* VSingleton.h */,
+			);
+			name = Vitamio;
+			path = Vitamio;
+			sourceTree = "<group>";
+		};
+		5905DEBFE62C7C47DD4169FB83C3D209 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B335DDB30FA0CBD58676D099CF4C84C9 /* audioTrackIcon.png */,
+				F545BCC9AB0162130FA54CD394BE1E35 /* audioTrackIcon@2x.png */,
+				CFAD82B3801C52E72CC947479F31A9B0 /* nav_btn_back_n.png */,
+				E55ECBC2BA5388D2377B2542607F468D /* nav_btn_back_n@2x.png */,
+				F42F42B467251E4949DDE154A75FED7D /* nav_btn_back_n@3x.png */,
+				4EDA1538A95BA617DDB26AB22DD2539A /* pb-seek-bar-bg@2x.png */,
+				7BA5E55519A8228261C0177C29D7D07C /* pb-seek-bar-btn@2x.png */,
+				4B513367198240D24B96854105DE6913 /* pb-seek-bar-fr@2x.png */,
+				8C54EF0D541A38F5FD9CD986B9DDD4E2 /* Player_brightness@2x.png */,
+				BE50B9D2E1C59B8BE5A6282A760887BF /* TFPlayer_fullscreen.png */,
+				7D55E065695194953230E4EAC8FAB64A /* TFPlayer_fullscreen@2x.png */,
+				D51D8CD9716A3E99CD681E9EF59F293F /* TFPlayer_fullscreen@3x.png */,
+				A9764F340A0FFAEE9D371F23E8D62810 /* TFPlayer_lock-nor.png */,
+				EA5498F1AB33A1B8E99CC253F43C80EF /* TFPlayer_lock-nor@2x.png */,
+				752FF25ED9ABCA5338FEAD929857A498 /* TFPlayer_lock-nor@3x.png */,
+				F7829E4EB45296E951A15A532CFFD7BF /* TFPlayer_shrinkscreen.png */,
+				23C69190966F9D2A87D5059993E6DE2B /* TFPlayer_shrinkscreen@2x.png */,
+				1401DA9B65AD839DD8D9A175F19BAA60 /* TFPlayer_shrinkscreen@3x.png */,
+				C960E4E3C7CEB498DD522FECEE37C12A /* TFPlayer_slider.png */,
+				EA8F8100147D5F644BAC62B8730FCD60 /* TFPlayer_slider@2x.png */,
+				E4B242DF58B17E4932AB4ECCFDA97D4B /* TFPlayer_slider@3x.png */,
+				A9201384BB82A7A206F363E09E75EE34 /* TFPlayer_unlock-nor.png */,
+				087D1BC9657938A3D93F46AFAF5B8426 /* TFPlayer_unlock-nor@2x.png */,
+				F01404103CA37B2510BD9BE21F7C1CCB /* TFPlayer_unlock-nor@3x.png */,
+				46754561088F3DBE4500F5B883FADF4C /* VKVideoPlayer_pause.png */,
+				6EF7613CC7E73981F6E6DDEC516257F9 /* VKVideoPlayer_pause@2x.png */,
+				01FD44F3519773C2AFF96009E1A4B5A1 /* VKVideoPlayer_pause_big.png */,
+				B648A503BA049E8508B22BDF5780564A /* VKVideoPlayer_pause_big@2x.png */,
+				7A755A0E7D8849FA57AFD1BAD083EEAC /* VKVideoPlayer_play.png */,
+				BD01F8EC6FD2A94151F6EB30CACDBD19 /* VKVideoPlayer_play@2x.png */,
+				7D6B4BE22AC56DD261B2B6153F84AB48 /* VKVideoPlayer_play_big.png */,
+				ACB9E38368045238116FDF28CCE8503D /* VKVideoPlayer_play_big@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				37F4E0547D5B36AF51869CAA83DD887A /* Development Pods */,
+				876F80F8AFD1240ED0B7B9EA9C5BFAD8 /* Frameworks */,
+				B6F4405B5E81ABE9F96E02096444D7CA /* Products */,
+				9CD40A99CA610BE2DDAFA25BE10AFC58 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		876F80F8AFD1240ED0B7B9EA9C5BFAD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1C691D6FC3383AF3F2B93979F4B2F34 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CD40A99CA610BE2DDAFA25BE10AFC58 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FF489D1788C8F15E790EF9913C2C6FB /* Pods-TFVideoPlayer_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B1C691D6FC3383AF3F2B93979F4B2F34 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4A0402625B4F5BA130E03DB231397A81 /* AudioToolbox.framework */,
+				5BBD85D8B0BA24BEDFD0B8AF262D45A5 /* AVFoundation.framework */,
+				C2B9161313A93294EAA30F08BD3C6113 /* CoreGraphics.framework */,
+				E90A67CECF296AEFD0BFC23D8EC1E04D /* CoreMedia.framework */,
+				AE54C4E7249B233BE551F5C508A4BAFC /* CoreVideo.framework */,
+				825BAD8B31A629AF7F75F3864EF99DC6 /* Foundation.framework */,
+				B620DB8E2FB95A794B9C87BB70DF7F80 /* MediaPlayer.framework */,
+				303503D43CA49B656A524B36EEC62DDB /* OpenGLES.framework */,
+				2E0E2DB904F50EF27FA8963B8A1714FC /* QuartzCore.framework */,
+				A5444BD7D045181BD4AA72FFD74B20FC /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B6F4405B5E81ABE9F96E02096444D7CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A0B16F68E252F9FA9391AD12CD1E60F /* Pods_TFVideoPlayer_Example.framework */,
+				E4CA145F2E4DC6AB5D519BE0515DE56E /* TFVideoPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C04306C1D21AFFA95A9576EF7A0ED732 /* TFVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				0D00FD42D2FCCA966957D6AD5D7117BD /* TFPlayerController.h */,
+				C210DD7B4F6E812B3926586C543F0A3C /* TFPlayerController.m */,
+				F840E3E238E20F2215695DB922B91525 /* Frameworks */,
+				5905DEBFE62C7C47DD4169FB83C3D209 /* Resources */,
+				2E911F4E78E88F47811CEC92CD5986FF /* Support Files */,
+				F69C3210777BE0B1BFB387D69AAD484C /* TFPlayer */,
+				10E4440EB31543ADB5F0FC58D9A6C4BF /* Vitamio-online */,
+			);
+			name = TFVideoPlayer;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		F69C3210777BE0B1BFB387D69AAD484C /* TFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				9C8621A0D5DA9FDFE24ABE5F14CDE4DE /* BrightnessView.h */,
+				ADAB7A9C9393FEE0AD3F219136BA9EEE /* BrightnessView.m */,
+				C819A7C4F98CA8446B98190D9F8CB0E3 /* ForwardBackView.h */,
+				7AD739F37D2144194453285F46AEB250 /* ForwardBackView.m */,
+				916AB131FF9F9243F9F6B2AC44B3C1C0 /* TFPlayer.h */,
+				5C1945066FC9839887034ADDDE6DF2E1 /* TFPlayerTools.h */,
+				E27F412E62C42BF158333AA83052ADE0 /* TFPlayerTools.m */,
+				FACD3E084373FCF5793A71B2927DD5A1 /* TFVideoPlayer.h */,
+				37AE2792F109C02C0353E9591B569890 /* TFVideoPlayer.m */,
+				7B88600584418B0AF60ADF6F527B50B6 /* TFVideoPlayerView.h */,
+				54C128AB259DDF7CFA87FE75B3C162A0 /* TFVideoPlayerView.m */,
+				9CE91D10B5B5343D5B21D5BE8922480F /* TFVSegmentSlider.h */,
+				EEA9FFBC5CFBF7D53F00331D7E6E1414 /* TFVSegmentSlider.m */,
+				DA70A69243F94460C6A8BB3EC14B474F /* UISlider+VDTrackHeight.h */,
+				E394DFBE7BEFA12D05D953DC27D9FA12 /* UISlider+VDTrackHeight.m */,
+			);
+			name = TFPlayer;
+			path = TFVideoPlayer/Classes/TFPlayer;
+			sourceTree = "<group>";
+		};
+		F840E3E238E20F2215695DB922B91525 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E9023F4AE9297D27E73BC06C40B8784 /* libffmpeg.a */,
+				8A5C24C57B580024F12A988B00D33CA2 /* libopenssl.a */,
+				E1D148B47D8186258950905D9E9FC916 /* libVitamio.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B0E378641AA63A45826F9C87827DE499 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1836B9C7D4D71EF306CC237D23B76122 /* BrightnessView.h in Headers */,
+				07FE1754A5905DCBAD1D0CA1095C0889 /* ForwardBackView.h in Headers */,
+				C81B98422D585B94921BE0DE542AC573 /* TFPlayer.h in Headers */,
+				0BA4942CBAED3A280832DFF7AA130D78 /* TFPlayerController.h in Headers */,
+				E0696F8473F9B9C57A877B4EBF5A2170 /* TFPlayerTools.h in Headers */,
+				A9578450A370B643D95E84D025448B14 /* TFVideoPlayer-umbrella.h in Headers */,
+				E9789DCF820E31803490D063B8B1F604 /* TFVideoPlayer.h in Headers */,
+				8C6658B4EDB506A79B6CEBAE443CB136 /* TFVideoPlayerView.h in Headers */,
+				5B14C0A05822100C78417C6ACB21551D /* TFVSegmentSlider.h in Headers */,
+				552E85F649BDA13E7A09277B721EAC7F /* UISlider+VDTrackHeight.h in Headers */,
+				F73539BB08A0CDEAE938BA76B741079F /* VDefines.h in Headers */,
+				46595F2FF24214208D3A9CDAE697AD9A /* Vitamio.h in Headers */,
+				916C324E181BEFDC9112E741886F7B52 /* VMediaExtracter.h in Headers */,
+				2E3FC6236FE0E083DD5D01FE60A78F7D /* VMediaExtracterDef.h in Headers */,
+				0EC717A184A19B7D7E3570CAC0C3FB5C /* VMediaPlayer.h in Headers */,
+				6C593DD2E784C4BF371B2DC6CDB7C471 /* VMediaPlayerDelegate.h in Headers */,
+				BE3FED2D9A639DCF5438415286BC492C /* VPlayerManageDef.h in Headers */,
+				4D8602CF8A2CE43D72AE25949A44DCF6 /* VSingleton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA92BCEB06A8047F015B8B6892C268ED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02ABA6D0D52FA985AE33AE4CE7F9A0 /* Pods-TFVideoPlayer_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		954BF6D86976E46FDDB5487B3F6C55FF /* TFVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24442DA9F1DCF0C605C87CC92F7D2DEB /* Build configuration list for PBXNativeTarget "TFVideoPlayer" */;
+			buildPhases = (
+				B28445B4BEDF00C964D7E936A220FD62 /* Sources */,
+				42AC0341C40CED50BE7CD6199C794D2D /* Frameworks */,
+				B0E378641AA63A45826F9C87827DE499 /* Headers */,
+				44C609C9AD4CD08E3001D7EEE305BC80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TFVideoPlayer;
+			productName = TFVideoPlayer;
+			productReference = E4CA145F2E4DC6AB5D519BE0515DE56E /* TFVideoPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED1BB9FDD9AAD09A87816B2355BBC855 /* Pods-TFVideoPlayer_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 345E00A75A7C0A978752DDA14B2ED009 /* Build configuration list for PBXNativeTarget "Pods-TFVideoPlayer_Example" */;
+			buildPhases = (
+				A82849E940BE21D8E09D7CEA04A5D5B4 /* Sources */,
+				2EE58705E9DAE206EFC14EC81881E7D9 /* Frameworks */,
+				EA92BCEB06A8047F015B8B6892C268ED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F07A0DF03940453FB87FF84A9F3D3AB /* PBXTargetDependency */,
+			);
+			name = "Pods-TFVideoPlayer_Example";
+			productName = "Pods-TFVideoPlayer_Example";
+			productReference = 7A0B16F68E252F9FA9391AD12CD1E60F /* Pods_TFVideoPlayer_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B6F4405B5E81ABE9F96E02096444D7CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED1BB9FDD9AAD09A87816B2355BBC855 /* Pods-TFVideoPlayer_Example */,
+				954BF6D86976E46FDDB5487B3F6C55FF /* TFVideoPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44C609C9AD4CD08E3001D7EEE305BC80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A8E5070B4F6911E5272B09B84A81B9 /* audioTrackIcon.png in Resources */,
+				35041C87F9210EBE69E9DE2F34054658 /* audioTrackIcon@2x.png in Resources */,
+				6EC3552917D657C09129607EEA4483DB /* nav_btn_back_n.png in Resources */,
+				3F1C3AF3734403CFC8263A5DB91C18C4 /* nav_btn_back_n@2x.png in Resources */,
+				D363C87119740030F0B20350CEAD5654 /* nav_btn_back_n@3x.png in Resources */,
+				7069D6DA7B4E258155345884A30F9CD2 /* pb-seek-bar-bg@2x.png in Resources */,
+				C0F9D10E055391F07DEE2623D328A503 /* pb-seek-bar-btn@2x.png in Resources */,
+				45A86F942FF33C5DCBFBB284EB3BB021 /* pb-seek-bar-fr@2x.png in Resources */,
+				E27D09BEF49D03FDCE5FAFF5BAD80174 /* Player_brightness@2x.png in Resources */,
+				F127882F1CB14943B9B581ED23A33BE8 /* TFPlayer_fullscreen.png in Resources */,
+				65A08D3547996B30873E1F6F7E61C189 /* TFPlayer_fullscreen@2x.png in Resources */,
+				FEE8B914363D478CE3C7A83A0ADE6CCF /* TFPlayer_fullscreen@3x.png in Resources */,
+				EEA9D62631FE28109C0F9F3847481B1B /* TFPlayer_lock-nor.png in Resources */,
+				D5EAB22C761C270704EEED55188041D6 /* TFPlayer_lock-nor@2x.png in Resources */,
+				C56FBA40C121F3EE2F0501F66EDF7BE4 /* TFPlayer_lock-nor@3x.png in Resources */,
+				7B4D39D09872B1BAE22C869DE270D02C /* TFPlayer_shrinkscreen.png in Resources */,
+				E5C09028A0140DF12F63AAD8BE92F511 /* TFPlayer_shrinkscreen@2x.png in Resources */,
+				7F7C3C5B39AA2E73F2CEC36732F0DF35 /* TFPlayer_shrinkscreen@3x.png in Resources */,
+				4913EE5ECB9888FEB44F8206BFE2A573 /* TFPlayer_slider.png in Resources */,
+				452E6E8C86ABE4A173580FCB6FD77BF3 /* TFPlayer_slider@2x.png in Resources */,
+				98B8F062E2B58182AFFC52B74EAF16F9 /* TFPlayer_slider@3x.png in Resources */,
+				027B5E054EC807165E93FC1331C4D2C2 /* TFPlayer_unlock-nor.png in Resources */,
+				B5D90F974CC208297D5B1CE75C9A9DA4 /* TFPlayer_unlock-nor@2x.png in Resources */,
+				E77039CCC479C3E9B7B2354A06BACFB4 /* TFPlayer_unlock-nor@3x.png in Resources */,
+				BDD947E54B73B74AA5D6E220F56C1EC0 /* VKVideoPlayer_pause.png in Resources */,
+				7F272B8DB0CEBEB7B35D4FF68FE1977E /* VKVideoPlayer_pause@2x.png in Resources */,
+				E7CFB2DC23BEAF0D5BEFB2EDDBAC0804 /* VKVideoPlayer_pause_big.png in Resources */,
+				1ADC7450C70B6B6D666826E72EB9381B /* VKVideoPlayer_pause_big@2x.png in Resources */,
+				100F2F4C56F67BB0CF255C5A1F07E009 /* VKVideoPlayer_play.png in Resources */,
+				D0432F969616AABE91A27EFED423AB47 /* VKVideoPlayer_play@2x.png in Resources */,
+				E597E8DA3568F01076797C86DBD5BAD8 /* VKVideoPlayer_play_big.png in Resources */,
+				D61AE2AABBE572F0E403397391EAEA87 /* VKVideoPlayer_play_big@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A82849E940BE21D8E09D7CEA04A5D5B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7AD6E4B69D107F9E30FFC171D29B39A /* Pods-TFVideoPlayer_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B28445B4BEDF00C964D7E936A220FD62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D091973763D2F262E5332DE19E8AA1 /* BrightnessView.m in Sources */,
+				BC3989654D194F9B12D5E28374367575 /* ForwardBackView.m in Sources */,
+				657040C8E1DAFF5A908C7B407464EF36 /* TFPlayerController.m in Sources */,
+				1656E329548BCEFFDE93D5F5B3F9F75F /* TFPlayerTools.m in Sources */,
+				4A8C885C29A246DBD06CDEA0BCDA3E9F /* TFVideoPlayer-dummy.m in Sources */,
+				7CD2C0AFD2DB97C4291E854EF10E575D /* TFVideoPlayer.m in Sources */,
+				A0C06353CCABFC2DDD7771CE66D31570 /* TFVideoPlayerView.m in Sources */,
+				8F50A48329FB6C9C7862CE2422B9B3B6 /* TFVSegmentSlider.m in Sources */,
+				B7D64478BC1518DCF1DB113D4C18C5ED /* UISlider+VDTrackHeight.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F07A0DF03940453FB87FF84A9F3D3AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TFVideoPlayer;
+			target = 954BF6D86976E46FDDB5487B3F6C55FF /* TFVideoPlayer */;
+			targetProxy = FE330980ABD2B23F8FAA43BE2F4DD21A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16F436477CA811EAAA324EC12539C747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FAB1627B497601360F160078543F34F /* TFVideoPlayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TFVideoPlayer/TFVideoPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TFVideoPlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TFVideoPlayer/TFVideoPlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TFVideoPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3944C2813B9E44115922DBC4212E6BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95447BC1C2AF7203C17A2C4CE762EC6B /* Pods-TFVideoPlayer_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TFVideoPlayer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TFVideoPlayer_Example/Pods-TFVideoPlayer_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TFVideoPlayer_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B9710048BE18664342328D77D395115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31C5EBA8E4754244745C94162AFA229D /* Pods-TFVideoPlayer_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TFVideoPlayer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TFVideoPlayer_Example/Pods-TFVideoPlayer_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TFVideoPlayer_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A11D891FAF1CD1ABF7A4087A3BAF6F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FAB1627B497601360F160078543F34F /* TFVideoPlayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TFVideoPlayer/TFVideoPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TFVideoPlayer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TFVideoPlayer/TFVideoPlayer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TFVideoPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24442DA9F1DCF0C605C87CC92F7D2DEB /* Build configuration list for PBXNativeTarget "TFVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A11D891FAF1CD1ABF7A4087A3BAF6F1E /* Debug */,
+				16F436477CA811EAAA324EC12539C747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		345E00A75A7C0A978752DDA14B2ED009 /* Build configuration list for PBXNativeTarget "Pods-TFVideoPlayer_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3944C2813B9E44115922DBC4212E6BB4 /* Debug */,
+				9B9710048BE18664342328D77D395115 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

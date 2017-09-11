@@ -1,0 +1,49 @@
+{
+  "name": "TFVideoPlayer",
+  "version": "0.0.1",
+  "summary": "iOS video player.",
+  "description": "iOS video player,good to use",
+  "homepage": "https://github.com/darren90/TFVideoPlayer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Tonny": "1005052145@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/darren90/TFVideoPlayer.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": [
+    "TFVideoPlayer/Classes/**/*.{h,m}",
+    "TFVideoPlayer/Classes/TFPlayer/**/*.{h,m}",
+    "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.{h}"
+  ],
+  "resources": "TFVideoPlayer/Assets/*.png",
+  "vendored_libraries": "TFVideoPlayer/Classes/Vitamio-online/*.{a}",
+  "libraries": [
+    "iconv",
+    "stdc++",
+    "z"
+  ],
+  "frameworks": [
+    "AVFoundation",
+    "AudioToolbox",
+    "CoreGraphics",
+    "CoreMedia",
+    "CoreVideo",
+    "Foundation",
+    "MediaPlayer",
+    "OpenGLES",
+    "QuartzCore",
+    "UIKit"
+  ],
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(SDKROOT)/usr/include/libz"
+  },
+  "requires_arc": true
+}
