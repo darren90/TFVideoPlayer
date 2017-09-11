@@ -24,8 +24,13 @@
     "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.{h}"
   ],
   "resources": "TFVideoPlayer/Assets/*.png",
-  "vendored_libraries": "TFVideoPlayer/Classes/Vitamio-online/*.{a}",
+  "vendored_libraries": [
+    "TFVideoPlayer/Classes/Vitamio-online/libffmpeg.a",
+    "TFVideoPlayer/Classes/Vitamio-online/libopenssl.a",
+    "TFVideoPlayer/Classes/Vitamio-online/libVitamio.a"
+  ],
   "libraries": [
+    "xml2",
     "iconv",
     "stdc++",
     "z"
@@ -42,8 +47,8 @@
     "QuartzCore",
     "UIKit"
   ],
-  "xcconfig": {
-    "HEADER_SEARCH_PATHS": "$(SDKROOT)/usr/include/libz"
+  "pod_target_xcconfig": {
+    "OTHER_LDFLAGS": "$(inherited)"
   },
   "requires_arc": true
 }

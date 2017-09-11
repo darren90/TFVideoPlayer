@@ -1,8 +1,8 @@
 CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/TFVideoPlayer
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public" $(SDKROOT)/usr/include/libz
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../TFVideoPlayer/Classes/Vitamio-online"
-OTHER_LDFLAGS = -l"Vitamio" -l"ffmpeg" -l"iconv" -l"openssl" -l"stdc++" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "Foundation" -framework "MediaPlayer" -framework "OpenGLES" -framework "QuartzCore" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -l"Vitamio" -l"ffmpeg" -l"iconv" -l"openssl" -l"stdc++" -l"xml2" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "Foundation" -framework "MediaPlayer" -framework "OpenGLES" -framework "QuartzCore" -framework "UIKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}
