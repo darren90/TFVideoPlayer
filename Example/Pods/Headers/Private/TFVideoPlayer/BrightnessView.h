@@ -1,0 +1,1 @@
+../../../../../TFVideoPlayer/Classes/TFPlayer/BrightnessView.h

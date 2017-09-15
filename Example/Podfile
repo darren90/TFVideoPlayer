@@ -1,4 +1,4 @@
-use_frameworks!
+#use_frameworks!
 
 target 'TFVideoPlayer_Example' do
   pod 'TFVideoPlayer', :path => '../'

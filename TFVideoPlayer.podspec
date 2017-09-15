@@ -37,16 +37,20 @@ Pod::Spec.new do |s|
   #   'TFVideoPlayer' => ['TFVideoPlayer/Assets/*.png']
   # }
   s.resource     = 'TFVideoPlayer/Assets/*.png'
-
+  s.public_header_files = "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.h"
   # s.public_header_files = 'Pod/Classes/**/*.h'
   #s.library = 'z'
   #s.libraries = 'libbz2', 'libz','libstdc++','libiconv','z'
-  #s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/*.{a}'
-  s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/libffmpeg.a','TFVideoPlayer/Classes/Vitamio-online/libopenssl.a','TFVideoPlayer/Classes/Vitamio-online/libVitamio.a'
-  s.libraries  =  'xml2','iconv','stdc++','z'
-  s.frameworks = 'AVFoundation', 'AudioToolbox','CoreGraphics','CoreMedia','CoreVideo','Foundation','MediaPlayer','OpenGLES','QuartzCore','UIKit'
+  s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/*.{a}'
+  #s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/libffmpeg.a','TFVideoPlayer/Classes/Vitamio-online/libopenssl.a','TFVideoPlayer/Classes/Vitamio-online/libVitamio.a'
+  #s.libraries  =  "bz2", "z","stdc++","iconv" #'iconv','stdc++','z', 'bz2'
+  s.frameworks = 'Foundation','UIKit','AVFoundation','AudioToolbox','CoreGraphics','CoreMedia','CoreVideo','MediaPlayer','OpenGLES','QuartzCore'
+
+  #s.frameworks = 'AVFoundation', 'AudioToolbox','CoreGraphics','CoreMedia','CoreVideo','Foundation','MediaPlayer','OpenGLES','QuartzCore','UIKit'
   #s.dependency "Masonry", "~>  1.0.2"
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC','OTHER_LDFLAGS' => '$(inherited)' }
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  #s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  # ,'OTHER_LDFLAGS' => '$(inherited)'
   #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libz" }
   s.requires_arc = true 
 

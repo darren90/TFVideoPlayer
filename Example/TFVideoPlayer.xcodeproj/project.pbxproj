@@ -23,7 +23,11 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		895261EC1F64D585007FC4B5 /* O2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 895261EB1F64D585007FC4B5 /* O2View.m */; };
-		9A710ACED6899B07B2176427 /* Pods_TFVideoPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19340CC6972BC286DAC088A1 /* Pods_TFVideoPlayer_Example.framework */; };
+		89F0C6911F6AC1F900FC6E4F /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0C6901F6AC1F900FC6E4F /* libbz2.tbd */; };
+		89F0C6931F6AC1FF00FC6E4F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0C6921F6AC1FF00FC6E4F /* libz.tbd */; };
+		89F0C6951F6AC20700FC6E4F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0C6941F6AC20700FC6E4F /* libstdc++.tbd */; };
+		89F0C6971F6AC21400FC6E4F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0C6961F6AC21400FC6E4F /* libiconv.tbd */; };
+		BCE1FEC239B8CC591DC152F5 /* libPods-TFVideoPlayer_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B26DC913DCAA54DA9FFA073F /* libPods-TFVideoPlayer_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19340CC6972BC286DAC088A1 /* Pods_TFVideoPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFVideoPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4DB1ACC9DA74C6EC8E9DD3 /* Pods-TFVideoPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFVideoPlayer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TFVideoPlayer_Example/Pods-TFVideoPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* TFVideoPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFVideoPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,8 +68,13 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		895261EA1F64D585007FC4B5 /* O2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2View.h; sourceTree = "<group>"; };
 		895261EB1F64D585007FC4B5 /* O2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2View.m; sourceTree = "<group>"; };
+		89F0C6901F6AC1F900FC6E4F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		89F0C6921F6AC1FF00FC6E4F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		89F0C6941F6AC20700FC6E4F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		89F0C6961F6AC21400FC6E4F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		8FDE92AEE0ABF52359BCAF6C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A131D13D0D24D3CBADFC2337 /* Pods-TFVideoPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFVideoPlayer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TFVideoPlayer_Example/Pods-TFVideoPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B26DC913DCAA54DA9FFA073F /* libPods-TFVideoPlayer_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TFVideoPlayer_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +82,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F0C6971F6AC21400FC6E4F /* libiconv.tbd in Frameworks */,
+				89F0C6951F6AC20700FC6E4F /* libstdc++.tbd in Frameworks */,
+				89F0C6931F6AC1FF00FC6E4F /* libz.tbd in Frameworks */,
+				89F0C6911F6AC1F900FC6E4F /* libbz2.tbd in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9A710ACED6899B07B2176427 /* Pods_TFVideoPlayer_Example.framework in Frameworks */,
+				BCE1FEC239B8CC591DC152F5 /* libPods-TFVideoPlayer_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +130,16 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89F0C6961F6AC21400FC6E4F /* libiconv.tbd */,
+				89F0C6941F6AC20700FC6E4F /* libstdc++.tbd */,
+				89F0C6921F6AC1FF00FC6E4F /* libz.tbd */,
+				89F0C6901F6AC1F900FC6E4F /* libbz2.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				6890AE7EBC34ADF30B373990 /* Pods_TFVideoPlayer_Tests.framework */,
-				19340CC6972BC286DAC088A1 /* Pods_TFVideoPlayer_Example.framework */,
+				B26DC913DCAA54DA9FFA073F /* libPods-TFVideoPlayer_Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

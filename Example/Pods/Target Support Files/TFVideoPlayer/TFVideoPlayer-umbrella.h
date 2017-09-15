@@ -10,15 +10,6 @@
 #endif
 #endif
 
-#import "BrightnessView.h"
-#import "ForwardBackView.h"
-#import "TFPlayer.h"
-#import "TFPlayerTools.h"
-#import "TFVideoPlayer.h"
-#import "TFVideoPlayerView.h"
-#import "TFVSegmentSlider.h"
-#import "UISlider+VDTrackHeight.h"
-#import "TFPlayerController.h"
 #import "VDefines.h"
 #import "Vitamio.h"
 #import "VMediaExtracter.h"

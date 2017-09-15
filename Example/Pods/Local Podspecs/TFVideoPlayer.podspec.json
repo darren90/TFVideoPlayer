@@ -24,31 +24,22 @@
     "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.{h}"
   ],
   "resources": "TFVideoPlayer/Assets/*.png",
-  "vendored_libraries": [
-    "TFVideoPlayer/Classes/Vitamio-online/libffmpeg.a",
-    "TFVideoPlayer/Classes/Vitamio-online/libopenssl.a",
-    "TFVideoPlayer/Classes/Vitamio-online/libVitamio.a"
-  ],
-  "libraries": [
-    "xml2",
-    "iconv",
-    "stdc++",
-    "z"
-  ],
+  "public_header_files": "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.h",
+  "vendored_libraries": "TFVideoPlayer/Classes/Vitamio-online/*.{a}",
   "frameworks": [
+    "Foundation",
+    "UIKit",
     "AVFoundation",
     "AudioToolbox",
     "CoreGraphics",
     "CoreMedia",
     "CoreVideo",
-    "Foundation",
     "MediaPlayer",
     "OpenGLES",
-    "QuartzCore",
-    "UIKit"
+    "QuartzCore"
   ],
   "pod_target_xcconfig": {
-    "OTHER_LDFLAGS": "$(inherited)"
+    "OTHER_LDFLAGS": "-lObjC"
   },
   "requires_arc": true
 }
