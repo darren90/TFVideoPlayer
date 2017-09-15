@@ -1,16 +1,16 @@
 PODS:
-  - TFVideoPlayer (0.0.1)
+  - TFVideoPlayer (0.0.2)
 
 DEPENDENCIES:
-  - TFVideoPlayer (from `../`)
+  - TFVideoPlayer (from `../TFVideoPlayer.podspec`)
 
 EXTERNAL SOURCES:
   TFVideoPlayer:
-    :path: ../
+    :path: ../TFVideoPlayer.podspec
 
 SPEC CHECKSUMS:
-  TFVideoPlayer: 87304ab12a4649328fdfaa7af1fbf2865d51fd24
+  TFVideoPlayer: eb49eff4502233519ab9df455bfbcd6302cabae4
 
-PODFILE CHECKSUM: fc99857ce73fe72470abf4d9aa102356642b3bd6
+PODFILE CHECKSUM: 3a5a0433a320216d58abcc3ecb16775e6b91a15a
 
 COCOAPODS: 1.3.1

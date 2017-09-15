@@ -348,6 +348,7 @@
 				"${PODS_ROOT}/../../TFVideoPlayer/Assets/VKVideoPlayer_play@2x.png",
 				"${PODS_ROOT}/../../TFVideoPlayer/Assets/VKVideoPlayer_play_big.png",
 				"${PODS_ROOT}/../../TFVideoPlayer/Assets/VKVideoPlayer_play_big@2x.png",
+				"${PODS_ROOT}/../../TFVideoPlayer/Classes/TFPlayer/TFVideoPlayerView.xib",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

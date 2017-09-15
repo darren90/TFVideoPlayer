@@ -1,6 +1,6 @@
 {
   "name": "TFVideoPlayer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "iOS video player.",
   "description": "iOS video player,good to use",
   "homepage": "https://github.com/darren90/TFVideoPlayer",
@@ -13,19 +13,27 @@
   },
   "source": {
     "git": "https://github.com/darren90/TFVideoPlayer.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": [
-    "TFVideoPlayer/Classes/**/*.{h,m}",
-    "TFVideoPlayer/Classes/TFPlayer/**/*.{h,m}",
+    "TFVideoPlayer",
+    "TFVideoPlayer/Classes/*.{h,m}",
+    "TFVideoPlayer/Classes/TFPlayer/*.{h,m}",
     "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.{h}"
   ],
-  "resources": "TFVideoPlayer/Assets/*.png",
-  "public_header_files": "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.h",
-  "vendored_libraries": "TFVideoPlayer/Classes/Vitamio-online/*.{a}",
+  "resources": [
+    "TFVideoPlayer/Assets/*.png",
+    "TFVideoPlayer/Classes/TFPlayer/*.xib"
+  ],
+  "public_header_files": [
+    "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.h",
+    "TFVideoPlayer/Classes/*.{h,m}",
+    "TFVideoPlayer/Classes/TFPlayer/*.{h,m}"
+  ],
+  "vendored_libraries": "TFVideoPlayer/Classes/Vitamio-online/*.a",
   "frameworks": [
     "Foundation",
     "UIKit",
@@ -37,6 +45,12 @@
     "MediaPlayer",
     "OpenGLES",
     "QuartzCore"
+  ],
+  "libraries": [
+    "bz2",
+    "z",
+    "stdc++",
+    "iconv"
   ],
   "pod_target_xcconfig": {
     "OTHER_LDFLAGS": "-lObjC"
