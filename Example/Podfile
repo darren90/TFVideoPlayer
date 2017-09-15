@@ -1,12 +1,16 @@
 #use_frameworks!
 
 target 'TFVideoPlayer_Example' do
-  pod 'TFVideoPlayer', :path => '../'
+    pod 'TFVideoPlayer', :path => '../TFVideoPlayer.podspec'
 
 #  target 'TFVideoPlayer_Tests' do
 #    inherit! :search_paths
 
-#  pod 'Specta'
+#pod 'VitamioSDK-iOS', :path => '../../VitamioSDK-iOS-master/VitamioSDK-iOS.podspec'
+
+#pod 'Specta'
+#pod 'VitamioSDK-iOS'
+
 #  pod 'Expecta'
 #  pod 'FBSnapshotTestCase'
 #  pod 'Expecta+Snapshots'

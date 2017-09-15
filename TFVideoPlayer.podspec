@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TFVideoPlayer'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'iOS video player.'
 
 # This description is used to generate tags and improve search results.
@@ -31,27 +31,42 @@ Pod::Spec.new do |s|
   # s.ios.deployment_target = '8.0'
   s.platform     = :ios, "8.0"
 
-  s.source_files = 'TFVideoPlayer/Classes/**/*.{h,m}','TFVideoPlayer/Classes/TFPlayer/**/*.{h,m}', 'TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.{h}'
+  s.source_files = 'TFVideoPlayer','TFVideoPlayer/Classes/*.{h,m}','TFVideoPlayer/Classes/TFPlayer/*.{h,m}', 'TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.{h}'
   
+  #s.resource  = "icon.png"
+  #s.resources = 'TFVideoPlayer/Classes/TFPlayer/*.xib', 'TFVideoPlayer/Classes/TFPlayer/*.xib'
+
   # s.resource_bundles = {
   #   'TFVideoPlayer' => ['TFVideoPlayer/Assets/*.png']
   # }
-  s.resource     = 'TFVideoPlayer/Assets/*.png'
-  s.public_header_files = "TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.h"
+  s.resources     = 'TFVideoPlayer/Assets/*.png','TFVideoPlayer/Classes/TFPlayer/*.xib'
+  s.public_header_files = 'TFVideoPlayer/Classes/Vitamio-online/include/Vitamio/*.h','TFVideoPlayer/Classes/*.{h,m}','TFVideoPlayer/Classes/TFPlayer/*.{h,m}'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   #s.library = 'z'
   #s.libraries = 'libbz2', 'libz','libstdc++','libiconv','z'
-  s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/*.{a}'
+  s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/*.a'
   #s.vendored_libraries  = 'TFVideoPlayer/Classes/Vitamio-online/libffmpeg.a','TFVideoPlayer/Classes/Vitamio-online/libopenssl.a','TFVideoPlayer/Classes/Vitamio-online/libVitamio.a'
   #s.libraries  =  "bz2", "z","stdc++","iconv" #'iconv','stdc++','z', 'bz2'
-  s.frameworks = 'Foundation','UIKit','AVFoundation','AudioToolbox','CoreGraphics','CoreMedia','CoreVideo','MediaPlayer','OpenGLES','QuartzCore'
+  ##s.frameworks = 'Foundation','UIKit','AVFoundation','AudioToolbox','CoreGraphics','CoreMedia','CoreVideo','MediaPlayer','OpenGLES','QuartzCore'
 
   #s.frameworks = 'AVFoundation', 'AudioToolbox','CoreGraphics','CoreMedia','CoreVideo','Foundation','MediaPlayer','OpenGLES','QuartzCore','UIKit'
   #s.dependency "Masonry", "~>  1.0.2"
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  ##s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  ##s.compiler_flags = '-DOS_OBJECT_USE_OBJC=0', '-Wno-format'
+
   #s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
   # ,'OTHER_LDFLAGS' => '$(inherited)'
   #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libz" }
+
+
+  s.frameworks = "Foundation","UIKit","AVFoundation","AudioToolbox","CoreGraphics","CoreMedia","CoreVideo","MediaPlayer","OpenGLES","QuartzCore"
+
+  s.libraries = "bz2", "z","stdc++","iconv"
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+
+
   s.requires_arc = true 
 
 end
+
+
