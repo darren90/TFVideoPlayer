@@ -13,6 +13,13 @@
 #import "ForwardBackView.h"
 
 
+typedef enum {
+    TFVideoPlayerSmall,
+    TFVideoPlayerCell,
+    TFVideoPlayerFull,
+} TFVideoPlayerShowState;
+
+
 @protocol TFVideoPlayerViewDelegate <NSObject>
 
 @property (nonatomic, readonly) UIInterfaceOrientation visibleInterfaceOrientation;
@@ -24,6 +31,7 @@
 
 - (void)playerViewSingleTapped;
 
+- (void)fulllScrenAction;
 
 -(void)switchVideoViewModeButtonAction;
 
@@ -103,6 +111,7 @@
 
 #pragma mark - 开始 暂停
 -(IBAction)startPauseButtonAction:(UIButton *)sender;
+-(IBAction)fulllScrenAction:(UIButton *)sender;
 
 
 #pragma mark - 切换Model
@@ -138,6 +147,8 @@
 
 @property (nonatomic,strong)NSURL *PrevMediaUrl;
 @property (nonatomic, assign) BOOL isLockBtnEnable;//屏幕锁
+
+@property (nonatomic, assign) TFVideoPlayerShowState showState;
 
 
 /**

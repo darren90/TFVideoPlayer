@@ -70,6 +70,7 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
 - (void)initialize {
     self.view.delegate = self;
     if (!self.mMPayer) {
+        self.showState = TFVideoPlayerFull;
         self.mMPayer = [VMediaPlayer sharedInstance];
         [self.mMPayer setupPlayerWithCarrierView:self.view.carrier withDelegate:self];
         [self.mMPayer setSubShown:YES];
@@ -80,7 +81,12 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
 -(void)setIsPlayLocalFile:(BOOL)isPlayLocalFile {
     _isPlayLocalFile = isPlayLocalFile;
     self.view.isPlayLocalFile = _isPlayLocalFile;
-//    self.mMPayer.sharedInstance
+}
+
+- (void)setShowState:(TFVideoPlayerShowState)showState {
+    _showState = showState;
+    
+    self.view.showState = showState;
 }
 
 #pragma mark - 第一次播放视频
@@ -189,6 +195,16 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
     if (self.mMPayer.isPlaying) {
         [self.mMPayer pause];
         [self.view setPlayButtonsSelected:YES];//设置按钮的状态
+    }
+}
+
+- (void)fulllScrenAction {
+    if (self.showState == TFVideoPlayerFull) {
+        self.showState = TFVideoPlayerCell;
+    }
+    
+    if (self.showState == TFVideoPlayerCell) {
+        self.showState = TFVideoPlayerFull;
     }
 }
 

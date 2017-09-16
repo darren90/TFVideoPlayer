@@ -36,13 +36,6 @@ typedef enum {
 } TFVideoPlayerControlEvent;
 
 
-//typedef enum {
-//    TFVideoPlayerSmall,
-//    TFVideoPlayerCell,
-//    TFVideoPlayerBig,
-//} TFVideoPlayerShowState;
-
-
 @class TFVideoPlayer;
 @protocol TFVideoPlayerDelegate <NSObject>
 
@@ -57,7 +50,6 @@ typedef enum {
 - (void)videoPlayer:(TFVideoPlayer*)videoPlayer didChangeOrientationFrom:(UIInterfaceOrientation)orientation;
 
 @end
-
 
 @interface TFVideoPlayer : NSObject<VMediaPlayerDelegate>
 
@@ -74,6 +66,8 @@ typedef enum {
 
 /***  视频总时间 单位：秒s */
 @property (nonatomic,assign)double totalDuraion;
+
+@property (nonatomic, assign) TFVideoPlayerShowState showState;
 
 
 /** 单例的方式创建播放器 */

@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   s.libraries = "bz2", "z","stdc++","iconv"
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
 
-
+  s.dependency "Masonry", "~>  1.0.2"
   s.requires_arc = true 
 
 end

@@ -7,7 +7,7 @@
 //
 
 #import "ForwardBackView.h"
-//#import "Masonry.h"
+#import "Masonry.h"
 @interface ForwardBackView ()
 
 
@@ -39,9 +39,9 @@
         [self addSubview:timeLabel];
         self.timeLabel = timeLabel;
         
-//        [timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.bottom.left.right.equalTo(self);
-//        }];
+        [timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.left.right.equalTo(self);
+        }];
     }
     return self;
 }

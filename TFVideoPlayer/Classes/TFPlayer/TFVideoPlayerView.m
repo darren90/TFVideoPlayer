@@ -9,7 +9,7 @@
 
 #import "TFVideoPlayerView.h"
 #import <AVFoundation/AVFoundation.h>
-//#import "Masonry.h"
+#import "Masonry.h"
 #import "BrightnessView.h"
 #import "UISlider+VDTrackHeight.h"
 #import "TFPlayerTools.h"
@@ -45,13 +45,11 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 
 @implementation TFVideoPlayerView
 
-+(instancetype)videoPlayerView
-{
++ (instancetype)videoPlayerView{
     return [[NSBundle mainBundle] loadNibNamed:@"TFVideoPlayerView" owner:nil options:nil].firstObject;
 }
 
--(instancetype)init
-{
+- (instancetype)init{
     if (self = [super init]) {
         self = [TFVideoPlayerView videoPlayerView];
     }
@@ -82,24 +80,23 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     for (UIView *view in arr) {
         if ([view isKindOfClass:NSClassFromString(@"SysPlayerView")]) {
             //            view.frame = self.carrier.bounds;
-//            [view mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.top.bottom.left.right.equalTo(self.carrier);
-//            }];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.bottom.left.right.equalTo(self.carrier);
+            }];
             
             NSArray *subs = view.subviews;
             NSLog(@"-SysPlayerView-subs:%@",subs);
             
         }else if ([view isKindOfClass:NSClassFromString(@"GLVPlayerView")]){
             //            view.frame = self.carrier.bounds;
-//            [view mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.top.bottom.left.right.equalTo(self.carrier);
-//            }];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.bottom.left.right.equalTo(self.carrier);
+            }];
             
             NSArray *subs = view.subviews;
             NSLog(@"-GLVPlayerView-subs:%@",subs);
         }
     }
-    
 }
 
 
@@ -109,8 +106,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 #define RRTHMEFONT(FONTVALUE) ([UIFont systemFontOfSize:FONTVALUE])
 
 
--(void)initialize
-{
+-(void)initialize {
     
     //1: sunViews
     self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
@@ -128,7 +124,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     
     [self.lockButton setImage:[UIImage imageNamed:@"TFPlayer_unlock-nor"] forState:UIControlStateNormal];
     
-    self.progressSld.vd_trackHeight = 7.0;
+    self.progressSld.vd_trackHeight = 5.0;
     //当前点点的位置
     [self.progressSld setThumbImage:[UIImage imageNamed:@"TFPlayer_slider@3x.png"] forState:UIControlStateNormal];
     //已播放的条的颜色
@@ -169,6 +165,34 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     //        make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
     //    }];
     
+    self.showState = TFVideoPlayerFull;
+}
+
+- (void)setShowState:(TFVideoPlayerShowState)showState {
+    _showState = showState;
+    
+    switch (showState) {
+        case TFVideoPlayerSmall:{
+            
+        }
+            break;
+        case TFVideoPlayerCell:{
+            self.topControlHeight.constant = 0;
+            self.topControl.hidden = YES;
+            self.lockButton.hidden = YES;
+            self.bottomControlHeight.constant = 30;
+            [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_fullscreen"] forState:UIControlStateNormal];
+        }
+            break;
+        case TFVideoPlayerFull:{
+            self.topControl.hidden = NO;
+            self.lockButton.hidden = NO;
+            self.topControlHeight.constant = 55;
+            self.bottomControlHeight.constant = 50;
+            [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_shrinkscreen"] forState:UIControlStateNormal];
+        }
+            break;
+    }
 }
 
 
@@ -182,21 +206,18 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     self.doubleGesture = nil;
 }
 
--(IBAction)goBackButtonAction:(id)sender
-{
+-(IBAction)goBackButtonAction:(id)sender{
     NSLog(@"%s",__func__);
     [self.delegate doneButtonTapped];
 }
 
 #pragma mark - 切换音轨
-- (IBAction)changeTrack:(UIButton *)sender
-{
+- (IBAction)changeTrack:(UIButton *)sender{
     [self.delegate changeTrackTapped];
 }
 
 #pragma mark - 开始 暂停
--(IBAction)startPauseButtonAction:(UIButton *)sender
-{
+-(IBAction)startPauseButtonAction:(UIButton *)sender{
     if (self.isLockBtnEnable) return;
     if (sender.selected)  {//播放
         [self.delegate playButtonPressed];
@@ -207,17 +228,19 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     }
 }
 
--(IBAction)prevButtonAction:(id)sender
-{
+-(IBAction)prevButtonAction:(id)sender{
     
 }
 
--(IBAction)nextButtonAction:(id)sender
-{
+-(IBAction)nextButtonAction:(id)sender{
     
 }
--(void)setBtnEnableStatus:(BOOL)enable
-{
+
+-(IBAction)fulllScrenAction:(UIButton *)sender {
+    [self.delegate fulllScrenAction];
+}
+
+-(void)setBtnEnableStatus:(BOOL)enable{
     self.startPause.enabled = enable;
     self.prevBtn.enabled = enable;
     self.nextBtn.enabled = enable;
@@ -231,33 +254,29 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 }
 
 #pragma mark - 切换Model
--(IBAction)switchVideoViewModeButtonAction:(id)sender
-{
+-(IBAction)switchVideoViewModeButtonAction:(id)sender{
     [self.delegate switchVideoViewModeButtonAction];
 }
+
 #pragma mark - reset
--(IBAction)resetButtonAction:(id)sender
-{
+-(IBAction)resetButtonAction:(id)sender{
     
 }
 
 #pragma mark - 进度条相关
--(IBAction)progressSliderDownAction:(id)sender
-{
+-(IBAction)progressSliderDownAction:(id)sender{
     NSLog(@"-progressSliderDownAction--");
     [self.delegate progressSliderDownAction];
 }
 
--(IBAction)progressSliderUpAction:(id)sender
-{
+-(IBAction)progressSliderUpAction:(id)sender{
     NSLog(@"-progressSliderUpAction--");
     UISlider *sld = (UISlider *)sender;
     
     [self.delegate progressSliderUp:sld.value];
 }
 
--(IBAction)dragProgressSliderAction:(id)sender
-{
+-(IBAction)dragProgressSliderAction:(id)sender{
     NSLog(@"-dragProgressSliderAction--");
     UISlider *sld = (UISlider *)sender;
     long toalDuration = [self.delegate getTotalDuration];
@@ -301,8 +320,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 }
 
 #pragma mark - 进度条的点击代理，目前不执行 -- 点击进度条直接跳转到哪个地方
--(void)progressSliderGesture:(UIGestureRecognizer *)g
-{
+-(void)progressSliderGesture:(UIGestureRecognizer *)g{
     UISlider* s = (UISlider*)g.view;
     if (s.highlighted)
         return;
@@ -326,16 +344,22 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     [self.activityView startAnimating];
 }
 
--(void)stopActivity
-{
+-(void)stopActivity{
     self.bubbleMsgLbl.hidden = YES;
     self.bubbleMsgLbl.text = nil;
     [self.activityView stopAnimating];
 }
 
 #pragma mark - 单击 手势
-- (IBAction)handleSingleTap:(id)sender
-{
+- (IBAction)handleSingleTap:(id)sender{
+    if (self.showState == TFVideoPlayerCell) {
+        self.topControl.hidden = YES;
+        self.lockButton.hidden = YES;
+        self.bottomControl.hidden = !self.bottomControl.hidden;
+        
+        return;
+    }
+    
     //销毁计时器
     [self destroyHiddeControlTimer];
     //代理做
@@ -355,8 +379,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     [self addHiddeControlTimer];
 }
 
-- (IBAction)handleTwoTap:(id)sender
-{
+- (IBAction)handleTwoTap:(id)sender{
     if (self.isLockBtnEnable) {
         return;
     }
@@ -365,8 +388,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 }
 
 #pragma mark - 顶部和底部控制按钮的 增加定时器
--(void)addHiddeControlTimer
-{
+-(void)addHiddeControlTimer{
     //     NSLog(@"---addTimer");
     if (!self.timer && !self.isLockBtnEnable) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(hiddenTopBottom) userInfo:nil repeats:YES];
@@ -378,14 +400,12 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 }
 
 #pragma mark - 顶部和底部控制按钮的 销毁定时器
--(void)destroyHiddeControlTimer
-{
+-(void)destroyHiddeControlTimer{
     [self.timer invalidate];
     self.timer = nil;
 }
 
--(void)hiddenTopBottom
-{
+-(void)hiddenTopBottom{
     [UIView animateWithDuration:0.5 animations:^{
         if (!self.topControl.hidden) {
             self.topControl.hidden = YES;
@@ -402,8 +422,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 }
 
 #pragma mark - 分享
-- (IBAction)shareButtonTapped:(UIButton *)sender
-{
+- (IBAction)shareButtonTapped:(UIButton *)sender{
     //隐藏
     [self hiddenTopBottom];
     //代理
@@ -411,13 +430,11 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 }
 
 #pragma mark - 右下角的全屏按钮
-- (IBAction)fullscreenButtonTapped:(UIButton *)sender
-{
+- (IBAction)fullscreenButtonTapped:(UIButton *)sender{
     //    [self.delegate fullScreenButtonTapped];
 }
 
-- (IBAction)lockButtonClick:(UIButton *)sender
-{
+- (IBAction)lockButtonClick:(UIButton *)sender{
     self.isLockBtnEnable = !self.isLockBtnEnable;
     
     if (!self.isLockBtnEnable) {
@@ -594,11 +611,11 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         forwardView.layer.cornerRadius = 5;
         forwardView.clipsToBounds = YES;
         //        self.center = forwardView.center;
-//        [forwardView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(40);//84
-//            make.width.mas_equalTo(155);//170
-//            make.center.equalTo(self);
-//        }];
+        [forwardView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(40);//84
+            make.width.mas_equalTo(155);//170
+            make.center.equalTo(self);
+        }];
     }
 }
 

@@ -135,7 +135,7 @@
                     <rect key="frame" x="0.0" y="175" width="437" height="49"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-rG-gUH">
-                            <rect key="frame" x="0.0" y="10" width="40" height="28"/>
+                            <rect key="frame" x="0.0" y="2" width="40" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="nPY-Hl-VlX"/>
                             </constraints>
@@ -146,7 +146,7 @@
                             </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.01" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gQC-4m-Hgz" customClass="TFVSegmentSlider">
-                            <rect key="frame" x="85" y="18" width="269" height="7"/>
+                            <rect key="frame" x="85" y="18.5" width="269" height="7"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="6" id="pfp-MN-bjv"/>
                             </constraints>
@@ -158,7 +158,7 @@
                             </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-7n-DmK">
-                            <rect key="frame" x="37" y="18" width="45" height="12"/>
+                            <rect key="frame" x="37" y="18.5" width="45" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -170,11 +170,11 @@
                             </constraints>
                             <state key="normal" image="TFPlayer_shrinkscreen.png"/>
                             <connections>
-                                <action selector="goBackButtonAction:" destination="Nc7-em-zWl" eventType="touchUpInside" id="mzU-FB-8D0"/>
+                                <action selector="fulllScrenAction:" destination="Nc7-em-zWl" eventType="touchUpInside" id="Mnl-tn-cpX"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jW-Vq-NmU">
-                            <rect key="frame" x="357" y="18" width="45" height="12"/>
+                            <rect key="frame" x="357" y="18.5" width="45" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -183,12 +183,12 @@
                     <color key="backgroundColor" red="0.12549019610000001" green="0.12941176469999999" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="BG4-Yd-Fq9"/>
-                        <constraint firstItem="KxZ-rG-gUH" firstAttribute="top" secondItem="ase-fd-jZy" secondAttribute="top" constant="10" id="BLj-w8-RD0"/>
+                        <constraint firstItem="KxZ-rG-gUH" firstAttribute="top" secondItem="ase-fd-jZy" secondAttribute="top" constant="2" id="BLj-w8-RD0"/>
                         <constraint firstItem="gfc-7n-DmK" firstAttribute="leading" secondItem="KxZ-rG-gUH" secondAttribute="trailing" constant="-3" id="DBP-0M-foR"/>
                         <constraint firstItem="xh8-vB-cuI" firstAttribute="top" secondItem="ase-fd-jZy" secondAttribute="top" id="NNo-Io-XJo"/>
                         <constraint firstAttribute="trailing" secondItem="xh8-vB-cuI" secondAttribute="trailing" id="R7q-YX-lFr"/>
                         <constraint firstItem="4jW-Vq-NmU" firstAttribute="leading" secondItem="gQC-4m-Hgz" secondAttribute="trailing" constant="5" id="SG9-U7-ptd"/>
-                        <constraint firstAttribute="bottom" secondItem="KxZ-rG-gUH" secondAttribute="bottom" constant="11" id="T4R-vL-3po"/>
+                        <constraint firstAttribute="bottom" secondItem="KxZ-rG-gUH" secondAttribute="bottom" constant="2" id="T4R-vL-3po"/>
                         <constraint firstItem="gQC-4m-Hgz" firstAttribute="centerY" secondItem="KxZ-rG-gUH" secondAttribute="centerY" constant="-3" id="Yh9-1h-bq0"/>
                         <constraint firstItem="gQC-4m-Hgz" firstAttribute="leading" secondItem="gfc-7n-DmK" secondAttribute="trailing" constant="5" id="f1m-G8-deQ"/>
                         <constraint firstItem="4jW-Vq-NmU" firstAttribute="centerY" secondItem="KxZ-rG-gUH" secondAttribute="centerY" id="f4C-3s-vYD"/>
@@ -240,6 +240,7 @@
                 <outlet property="doneButton" destination="f7h-wo-2kt" id="qIb-1B-lb0"/>
                 <outlet property="doubleGesture" destination="oqD-vw-5RO" id="fpu-Su-Saw"/>
                 <outlet property="durationLbl" destination="4jW-Vq-NmU" id="EZP-XA-oIM"/>
+                <outlet property="fullscreenButton" destination="xh8-vB-cuI" id="9jW-fB-I7e"/>
                 <outlet property="loadbgView" destination="Xg1-j2-DL0" id="IA7-XT-Niv"/>
                 <outlet property="lockButton" destination="Lid-TE-NmH" id="IBa-0k-hFD"/>
                 <outlet property="progressSld" destination="gQC-4m-Hgz" id="FzE-UH-PVU"/>
