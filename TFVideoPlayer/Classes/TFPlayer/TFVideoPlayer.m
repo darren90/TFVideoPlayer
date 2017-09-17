@@ -47,6 +47,7 @@
 @implementation TFVideoPlayer
 
 static  TFVideoPlayer *tfVideoPlayer = nil;
+
 + (TFVideoPlayer *) sharedPlayer {
     @synchronized(self){
         if (tfVideoPlayer == nil) {
