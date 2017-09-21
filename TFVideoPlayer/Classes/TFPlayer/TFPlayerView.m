@@ -12,7 +12,7 @@
 
 @interface TFPlayerView ()<TFVideoPlayerDelegate,TFVideoPlayerViewDelegate>
 
-@property (nonatomic, strong) TFVideoPlayerView *playerView;
+//@property (nonatomic, strong) TFVideoPlayerView *playerView;
 
 // TODO
 @property (nonatomic, assign) BOOL                   isFullScreen;
@@ -159,10 +159,52 @@
     if (CGRectEqualToRect(self.frame, CGRectZero)) {
         return;
     }
-    [self fulllScrenAction];
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     UIInterfaceOrientation interfaceOrientation = (int)(UIInterfaceOrientation)orientation;
-    [self willRotateToInterfaceOrientation:interfaceOrientation duration:0];
+//    [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+//    [self willRotateToInterfaceOrientation:interfaceOrientation duration:0];
+    
+    [self removeFromSuperview];
+    
+    if (interfaceOrientation == UIDeviceOrientationLandscapeRight || interfaceOrientation ==UIDeviceOrientationLandscapeLeft) {
+        //大屏
+        NSLog(@"大屏显示");
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.top.equalTo(@0);
+            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
+            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
+            make.center.equalTo([UIApplication sharedApplication].keyWindow);
+        }];
+ 
+    } else {
+        //小屏幕
+        NSLog(@"小屏显示");
+        [self.playerFatherView addSubview:self];
+        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_offset(UIEdgeInsetsZero);
+        }];
+    }
+    UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    // 判断如果当前方向和要旋转的方向一致,那么不做任何操作
+    if (currentOrientation == interfaceOrientation) { return; }
+    
+    
+//    [self fulllScrenAction];
+    
+    // iOS6.0之后,设置状态条的方法能使用的前提是shouldAutorotate为NO,也就是说这个视图控制器内,旋转要关掉;
+    // 也就是说在实现这个方法的时候-(BOOL)shouldAutorotate返回值要为NO
+    [[UIApplication sharedApplication] setStatusBarOrientation:interfaceOrientation animated:NO];
+    // 获取旋转状态条需要的时间:
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    // 更改了状态条的方向,但是设备方向UIInterfaceOrientation还是正方向的,这就要设置给你播放视频的视图的方向设置旋转
+    // 给你的播放视频的view视图设置旋转
+    self.transform = CGAffineTransformIdentity;
+    self.transform = [self getTransformRotationAngle];
+    // 开始旋转
+    [UIView commitAnimations];
+
 }
 
 
