@@ -38,5 +38,8 @@
  */
 @property (nonatomic,copy)NSString * topTitle;
 
+- (void)playerOnCellView:(UIView *)cellView;
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 
 @end
