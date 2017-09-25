@@ -51,6 +51,13 @@ typedef enum {
 
 @end
 
+
+@protocol TFVideoPlayermDelegate <NSObject>
+
+- (void)fulllScrenAction;
+
+@end
+
 @interface TFVideoPlayer : NSObject<VMediaPlayerDelegate>
 
 @property (nonatomic, strong) TFVideoPlayerView *view;
@@ -83,6 +90,10 @@ typedef enum {
 
 #pragma mark - 卸载播放器
 -(void)unInstallPlayer;
+
+
+@property (nonatomic, weak) id<TFVideoPlayermDelegate> mDelegate;
+
 
 //小屏幕播放
 //@property (nonatomic,assign)BOOL isSmallPlay;//kvc 用的

@@ -37,7 +37,7 @@
 //    self.player.view.frame = self.bounds;
     self.player.delegate = self;
     [self addSubview:self.player.view];
-    self.player.view.delegate = self;
+//    self.player.view.delegate = self;
     [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.left.right.equalTo(self);
     }];
@@ -227,26 +227,8 @@
             make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
             make.center.equalTo([UIApplication sharedApplication].keyWindow);
         }];
-        
-        //        self.isFullScreen = YES;
-        //        self.playerVC.player.view.isSmallPlayShow = NO;
-        //        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-        //        [self.playerVC.player.view.fullscreenButton setImage:IMAGENAME(@"VKVideoPlayer_zoom_in") forState:UIControlStateNormal];
-        //
-        //        [self.detailsView clearPopView];
-        //        [self clearPopUpView];
-        
-    }
-//    else if (toInterfaceOrientation ==UIDeviceOrientationLandscapeLeft)
-//    {
-//        [[UIApplication sharedApplication].keyWindow addSubview:self];
-//        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.width));
-//            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.height));
-//            make.center.equalTo([UIApplication sharedApplication].keyWindow);
-//        }];
-//    }
-    else {
+ 
+    } else {
         //小屏幕
         NSLog(@"小屏显示");
         [self.playerFatherView addSubview:self];
