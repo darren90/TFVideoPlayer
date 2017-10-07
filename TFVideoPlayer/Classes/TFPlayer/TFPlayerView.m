@@ -10,7 +10,7 @@
 #import "TFVideoPlayerView.h"
 #import "Masonry.h"
 
-@interface TFPlayerView ()<TFVideoPlayerDelegate,TFVideoPlayerViewDelegate>
+@interface TFPlayerView ()<TFVideoPlayerDelegate, TFVideoPlayerViewDelegate, TFVideoPlayermDelegate>
 
 //@property (nonatomic, strong) TFVideoPlayerView *playerView;
 
@@ -35,7 +35,9 @@
 - (void)initiaize{
     self.player = [[TFVideoPlayer alloc]init];
 //    self.player.view.frame = self.bounds;
+    self.backgroundColor = [UIColor blackColor];
     self.player.delegate = self;
+    self.player.mDelegate = self;
     [self addSubview:self.player.view];
 //    self.player.view.delegate = self;
     [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,6 +101,16 @@
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_offset(UIEdgeInsetsZero);
     }];
+}
+
+- (void)playerOnCellView:(UIView *)cellView inView:(UIView *)inView {
+    self.playerFatherView = cellView;
+    [self removeFromSuperview];
+    [inView addSubview:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cellView);
+    }];
+//    self.frame = cellView.frame;
 }
 
 - (void)fulllScrenAction {
@@ -232,6 +244,7 @@
         //小屏幕
         NSLog(@"小屏显示");
         [self.playerFatherView addSubview:self];
+//        self 
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_offset(UIEdgeInsetsZero);
         }];

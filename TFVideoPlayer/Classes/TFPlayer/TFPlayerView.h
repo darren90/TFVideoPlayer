@@ -40,6 +40,8 @@
 
 - (void)playerOnCellView:(UIView *)cellView;
 
+- (void)playerOnCellView:(UIView *)cellView inView:(UIView *)inView;
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 
 @end

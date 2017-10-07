@@ -69,7 +69,7 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
 #pragma mark - initialize
 
 - (void)initialize {
-//    self.view.delegate = self;
+    self.view.delegate = self;
     if (!self.mMPayer) {
         self.showState = TFVideoPlayerFull;
         self.mMPayer = [VMediaPlayer sharedInstance];
