@@ -79,7 +79,6 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     NSArray *arr = self.carrier.subviews;
     for (UIView *view in arr) {
         if ([view isKindOfClass:NSClassFromString(@"SysPlayerView")]) {
-            //            view.frame = self.carrier.bounds;
             [view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.bottom.left.right.equalTo(self.carrier);
             }];
@@ -88,7 +87,6 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             NSLog(@"-SysPlayerView-subs:%@",subs);
             
         }else if ([view isKindOfClass:NSClassFromString(@"GLVPlayerView")]){
-            //            view.frame = self.carrier.bounds;
             [view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.bottom.left.right.equalTo(self.carrier);
             }];

@@ -9,7 +9,7 @@
 #import "TFPlayerView.h"
 #import "Masonry.h"
 
-@interface TFPlayerDetailViewController ()
+@interface TFPlayerDetailViewController ()<TFVideoPlayerDelegate>
 
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) TFPlayerView *playerView;
@@ -43,7 +43,7 @@
     self.bgView = [[UIView alloc] init];
     [self.view addSubview:self.bgView];
 //    self.bgView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 9 / 16.0);
-//    self.bgView.backgroundColor = [UIColor brownColor];
+    self.bgView.backgroundColor = [UIColor brownColor];
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(@0);
         make.width.mas_equalTo(@(self.view.frame.size.width));
@@ -51,6 +51,7 @@
     }];
     
     self.playerView = [[TFPlayerView alloc] init];
+    self.playerView.player.delegate = self;
     [self.bgView addSubview:self.playerView];
     [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
          make.edges.mas_offset(UIEdgeInsetsZero);
@@ -88,6 +89,55 @@
 
 - (BOOL)shouldAutorotate{
     return YES;
+}
+
+
+
+- (void)videoPlayer:(TFVideoPlayer*)videoPlayer didControlByEvent:(TFVideoPlayerControlEvent)event{
+    if (self.playerView.player.view.isLockBtnEnable) {
+        return;
+    }
+    
+    switch (event) {
+        case TFVideoPlayerControlEventTapDone: {
+            [self.playerView.player pauseContent];
+//            [self saveSeekDuration];
+//            [self dismissViewControllerAnimated:YES completion:^{
+//                [self unInstallPlayer];
+//            }];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+            break;
+        case TFVideoPlayerControlEventPause: {
+            [self.playerView.player pauseContent];
+            
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+}
+
+
+-(void)dealloc{
+    [self unInstallPlayer];
+}
+
+#pragma mark - 卸载播放器
+-(void)unInstallPlayer {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_playerView.player pauseContent];
+    [_playerView.player unInstallPlayer];
+    _playerView.player.delegate = nil;
+    [_playerView.player.view removeFromSuperview];
+    _playerView.player.view = nil;
+    _playerView.player = nil;
+    
+    [_playerView removeFromSuperview];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+    NSLog(@"---TFMoviePlayerViewController--销毁了");
 }
 
 @end

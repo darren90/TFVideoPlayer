@@ -14,9 +14,9 @@
 
 
 typedef enum {
-    TFVideoPlayerSmall,
-    TFVideoPlayerCell,
-    TFVideoPlayerFull,
+    TFVideoPlayerSmall, // 小屏播放
+    TFVideoPlayerCell,  //单元格播放
+    TFVideoPlayerFull,  //全屏播放
 } TFVideoPlayerShowState;
 
 

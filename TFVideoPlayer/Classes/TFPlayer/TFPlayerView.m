@@ -63,7 +63,7 @@
     if (CGRectEqualToRect(self.frame, [UIScreen mainScreen].bounds)) {
         self.player.showState = TFVideoPlayerFull;
     } else {
-        self.player.showState = TFVideoPlayerCell;
+        self.player.showState = TFVideoPlayerSmall;
     }
     
     [self.player playChangeStreamUrl:playUrl title:self.topTitle seekToPos:0];
@@ -175,7 +175,7 @@
 
 - (void)onDeviceOrientationChange {
     NSLog(@"----onDeviceOrientationChange--");
-    if(self.player.showState == TFVideoPlayerFull) return;
+//    if(self.player.showState == TFVideoPlayerFull) return;
     if (!self.superview) return;
     if (CGRectEqualToRect(self.frame, CGRectZero)) {
         return;
@@ -216,6 +216,7 @@
 //    }
 
     if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationUnknown) {
+        self.player.showState = TFVideoPlayerSmall;
         //小屏幕
         NSLog(@"小屏显示");
         [self.playerFatherView addSubview:self];
@@ -224,11 +225,12 @@
             make.top.leading.bottom.trailing.equalTo(self.playerFatherView);
         }];
     } else {
+        self.player.showState = TFVideoPlayerFull;
         //大屏
         NSLog(@"大屏显示");
         [[UIApplication sharedApplication].keyWindow addSubview:self];
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.leading.top.equalTo(@0);
+            make.leading.top.trailing.equalTo(@0);
             make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
             make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
             make.center.equalTo([UIApplication sharedApplication].keyWindow);

@@ -71,7 +71,7 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
 - (void)initialize {
     self.view.delegate = self;
     if (!self.mMPayer) {
-        self.showState = TFVideoPlayerFull;
+        self.showState = TFVideoPlayerSmall;
         self.mMPayer = [VMediaPlayer sharedInstance];
         [self.mMPayer setupPlayerWithCarrierView:self.view.carrier withDelegate:self];
         [self.mMPayer setSubShown:YES];
@@ -200,13 +200,13 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
 }
 
 - (void)fulllScrenAction {
-    if (self.showState == TFVideoPlayerFull) {
-        self.showState = TFVideoPlayerCell;
-    }
-    
-    if (self.showState == TFVideoPlayerCell) {
-        self.showState = TFVideoPlayerFull;
-    }
+//    if (self.showState == TFVideoPlayerFull) {
+//        self.showState = TFVideoPlayerSmall;
+//    }
+//    
+//    if (self.showState == TFVideoPlayerSmall) {
+//        self.showState = TFVideoPlayerFull;
+//    }
     
     if([self.mDelegate respondsToSelector:@selector(fulllScrenAction)]) {
         [self.mDelegate fulllScrenAction];
