@@ -372,7 +372,8 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         
         [[UIApplication sharedApplication]setStatusBarHidden:self.topControl.hidden withAnimation:UIStatusBarAnimationNone];
     }
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+
     //添加计时器
     [self addHiddeControlTimer];
 }

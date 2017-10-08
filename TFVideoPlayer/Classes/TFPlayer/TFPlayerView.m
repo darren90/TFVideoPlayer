@@ -45,12 +45,16 @@
     }];
     
     // 监测设备方向
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onDeviceOrientationChange)
-                                                 name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
-    
+//    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(onDeviceOrientationChange)
+//                                                 name:UIDeviceOrientationDidChangeNotification
+//                                               object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(onStatusBarOrientationChange)
+//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+//                                               object:nil];
 }
 
 - (void)playStream:(NSURL*)url{
@@ -116,8 +120,22 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSLog(@"-1-self fathe erView-frame: %@", NSStringFromCGRect(self.playerFatherView.frame));
-    NSLog(@"-1-sele:frame: %@", NSStringFromCGRect(self.frame));
+    [self layoutIfNeeded];
+    
+    //横屏
+//    2017-10-08 21:07:36.307594+0800 RollClient[28221:2602665] -1-self fathe erView-frame: {{0, 0}, {667, 211}}
+//    2017-10-08 21:07:36.307754+0800 RollClient[28221:2602665] -1-sele:frame: {{0, 0}, {667, 375}}
+    
+ // 竖屏
+//    2017-10-08 21:08:02.911216+0800 RollClient[28221:2602665] -1-self fathe erView-frame: {{0, 0}, {375, 211}}
+//    2017-10-08 21:08:02.911638+0800 RollClient[28221:2602665] -1-sele:frame: {{0, 0}, {375, 211}}
+    
+    NSLog(@"-1-self fathe erView-frame: %@   : %@", NSStringFromCGRect(self.playerFatherView.frame), self.superview);
+    NSLog(@"-1-sele:frame: %@  : %@", NSStringFromCGRect(self.frame), self.superview);
+//    if(self.frame.origin.y != 0) {
+////        [self setNeedsLayout];
+//        [self layoutIfNeeded];
+//    }
 }
 
 
@@ -221,9 +239,10 @@
         NSLog(@"小屏显示");
         [self.playerFatherView addSubview:self];
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            //            make.edges.mas_offset(UIEdgeInsetsZero);
-            make.top.leading.bottom.trailing.equalTo(self.playerFatherView);
+            make.edges.mas_offset(UIEdgeInsetsZero);
+//            make.top.leading.bottom.trailing.equalTo(self.playerFatherView);
         }];
+        self.frame = self.playerFatherView.bounds;
     } else {
         self.player.showState = TFVideoPlayerFull;
         //大屏
@@ -263,6 +282,7 @@
 }
 
 
+
 #pragma mark 屏幕转屏相关
 
 /**
@@ -290,16 +310,17 @@
 
 // 状态条变化通知（在前台播放才去处理）
 - (void)onStatusBarOrientationChange {
+//    [self onDeviceOrientationChange];
 //    if (!self.didEnterBackground) {
-//        // 获取到当前状态条的方向
-//        UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
+        // 获取到当前状态条的方向
+        UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
 //        if (currentOrientation == UIInterfaceOrientationPortrait) {
 ////            [self setOrientationPortraitConstraint];
 //            if (self.cellPlayerOnCenter) {
 //                if ([self.scrollView isKindOfClass:[UITableView class]]) {
 //                    UITableView *tableView = (UITableView *)self.scrollView;
 //                    [tableView scrollToRowAtIndexPath:self.indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
-//                    
+//
 //                } else if ([self.scrollView isKindOfClass:[UICollectionView class]]) {
 //                    UICollectionView *collectionView = (UICollectionView *)self.scrollView;
 //                    [collectionView scrollToItemAtIndexPath:self.indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
@@ -324,9 +345,10 @@
 //                make.center.mas_equalTo(self);
 //                make.width.height.mas_equalTo(155);
 //            }];
-//            
+//
 //        }
 //    }
+    NSLog(@"--onStatusBarOrientationChange--");
 }
 
 
