@@ -59,11 +59,11 @@
  *
  *  @param url 播放地址
  */
-- (void)playStream:(NSURL*)url {
+//- (void)playStream:(NSURL*)url {
 //    [self.player playStreamUrl:url title:@"水电费水电费水电费" seekToPos:300];
-}
+//}
 
--(void)playChangeStreamUrl:(NSURL *)url
+-(void)playStream:(NSURL *)url
 {
     [self.player playChangeStreamUrl:url title:@"sdfsdfself.playUrlsd" seekToPos:100];
 }

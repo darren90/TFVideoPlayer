@@ -50,6 +50,7 @@
                                              selector:@selector(onDeviceOrientationChange)
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
+    
 }
 
 - (void)playStream:(NSURL*)url{
@@ -110,8 +111,15 @@
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cellView);
     }];
-//    self.frame = cellView.frame;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    NSLog(@"-1-self fathe erView-frame: %@", NSStringFromCGRect(self.playerFatherView.frame));
+    NSLog(@"-1-sele:frame: %@", NSStringFromCGRect(self.frame));
+}
+
 
 - (void)fulllScrenAction {
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
@@ -167,6 +175,7 @@
 
 - (void)onDeviceOrientationChange {
     NSLog(@"----onDeviceOrientationChange--");
+    if(self.player.showState == TFVideoPlayerFull) return;
     if (!self.superview) return;
     if (CGRectEqualToRect(self.frame, CGRectZero)) {
         return;
@@ -176,31 +185,61 @@
 //    [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
 //    [self willRotateToInterfaceOrientation:interfaceOrientation duration:0];
     
+    //颠倒屏幕的情况不再处理
+    if (interfaceOrientation == UIDeviceOrientationPortraitUpsideDown) return;
+    
     [self removeFromSuperview];
     
-    if (interfaceOrientation == UIDeviceOrientationLandscapeRight || interfaceOrientation ==UIDeviceOrientationLandscapeLeft) {
-        //大屏
-        NSLog(@"大屏显示");
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
-        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.removeExisting = YES;
+    }];
+    
+//    if (interfaceOrientation == UIDeviceOrientationLandscapeRight || interfaceOrientation ==UIDeviceOrientationLandscapeLeft) {
+//        //大屏
+//        NSLog(@"大屏显示");
+//        [[UIApplication sharedApplication].keyWindow addSubview:self];
+//        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
 //            make.leading.top.equalTo(@0);
-            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
-            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
-            make.center.equalTo([UIApplication sharedApplication].keyWindow);
-        }];
- 
-    } else {
+//            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
+//            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
+//            make.center.equalTo([UIApplication sharedApplication].keyWindow);
+//        }];
+//
+//    } else {
+//        //小屏幕
+//        NSLog(@"小屏显示");
+//        [self.playerFatherView addSubview:self];
+//        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+////            make.edges.mas_offset(UIEdgeInsetsZero);
+//            make.top.leading.bottom.trailing.equalTo(self.playerFatherView);
+//        }];
+//    }
+
+    if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationUnknown) {
         //小屏幕
         NSLog(@"小屏显示");
         [self.playerFatherView addSubview:self];
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_offset(UIEdgeInsetsZero);
+            //            make.edges.mas_offset(UIEdgeInsetsZero);
+            make.top.leading.bottom.trailing.equalTo(self.playerFatherView);
         }];
+    } else {
+        //大屏
+        NSLog(@"大屏显示");
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.top.equalTo(@0);
+            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
+            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
+            make.center.equalTo([UIApplication sharedApplication].keyWindow);
+        }];
+        
     }
+    
+    
     UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
     // 判断如果当前方向和要旋转的方向一致,那么不做任何操作
     if (currentOrientation == interfaceOrientation) { return; }
-    
     
 //    [self fulllScrenAction];
     
@@ -217,39 +256,10 @@
     // 开始旋转
     [UIView commitAnimations];
 
+    NSLog(@"--fathe erView-frame: %@", NSStringFromCGRect(self.playerFatherView.frame));
+    NSLog(@"--playerView-frame: %@", NSStringFromCGRect(self.frame));
 }
 
-
-// 设置
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    if (!self.superview) return;
-    if (CGRectEqualToRect(self.frame, CGRectZero)) {
-        return;
-    }
-    
-    [self removeFromSuperview];
-    
-    if (toInterfaceOrientation == UIDeviceOrientationLandscapeRight || toInterfaceOrientation ==UIDeviceOrientationLandscapeLeft) {
-        //大屏
-        NSLog(@"大屏显示");
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
-        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.leading.top.equalTo(@0);
-            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
-            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
-            make.center.equalTo([UIApplication sharedApplication].keyWindow);
-        }];
- 
-    } else {
-        //小屏幕
-        NSLog(@"小屏显示");
-        [self.playerFatherView addSubview:self];
-//        self 
-        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_offset(UIEdgeInsetsZero);
-        }];
-    }
-}
 
 #pragma mark 屏幕转屏相关
 
@@ -274,54 +284,6 @@
 - (void)setOrientationLandscapeConstraint:(UIInterfaceOrientation)orientation {
     [self toOrientation:orientation];
     self.isFullScreen = YES;
-}
-
-
-/**
- *  屏幕方向发生变化会调用这里
- */
-- (void)onDeviceOrientationChange2 {
-    if (!self.player) { return; }
-//    if (ZFPlayerShared.isLockScreen) { return; }
-//    if (self.didEnterBackground) { return; };
-//    if (self.playerPushedOrPresented) { return; }
-    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-    UIInterfaceOrientation interfaceOrientation = (UIInterfaceOrientation)orientation;
-    if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown || orientation == UIDeviceOrientationUnknown ) { return; }
-    
-    switch (interfaceOrientation) {
-        case UIInterfaceOrientationPortraitUpsideDown:{
-        }
-            break;
-        case UIInterfaceOrientationPortrait:{
-            if (self.isFullScreen) {
-                [self toOrientation:UIInterfaceOrientationPortrait];
-                
-            }
-        }
-            break;
-        case UIInterfaceOrientationLandscapeLeft:{
-            if (self.isFullScreen == NO) {
-                [self toOrientation:UIInterfaceOrientationLandscapeLeft];
-                self.isFullScreen = YES;
-            } else {
-                [self toOrientation:UIInterfaceOrientationLandscapeLeft];
-            }
-            
-        }
-            break;
-        case UIInterfaceOrientationLandscapeRight:{
-            if (self.isFullScreen == NO) {
-                [self toOrientation:UIInterfaceOrientationLandscapeRight];
-                self.isFullScreen = YES;
-            } else {
-                [self toOrientation:UIInterfaceOrientationLandscapeRight];
-            }
-        }
-            break;
-        default:
-            break;
-    }
 }
 
 // 状态条变化通知（在前台播放才去处理）
@@ -475,6 +437,8 @@
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 

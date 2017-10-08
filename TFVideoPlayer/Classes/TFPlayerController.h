@@ -10,9 +10,8 @@
 #import "TFPlayer.h"
 
 @interface TFPlayerController : UIViewController
+
 @property (nonatomic, strong) TFVideoPlayer* player;
-
-
 
 @property (nonatomic,copy)NSURL * playUrl;
 
@@ -22,7 +21,7 @@
  *  @param url 播放地址
  */
 - (void)playStream:(NSURL*)url;
--(void)playChangeStreamUrl:(NSURL *)url;
+//-(void)playChangeStreamUrl:(NSURL *)url;
 
 
 #pragma mark - 卸载播放器

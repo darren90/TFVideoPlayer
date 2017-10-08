@@ -8,25 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "TFVideoPlayer.h"
+#import "TFPlayerView.h"
 
 @interface TFMoviePlayerViewController : UIViewController
-@property (nonatomic, strong) TFVideoPlayer* player;
 
-
+//@property (nonatomic, strong) TFVideoPlayer* player;
+@property (nonatomic, strong) TFPlayerView *playerView;
 
 @property (nonatomic,copy)NSURL * playUrl;
 
-/**
- *  小屏播放器要用到
- *
- *  @param url 播放地址
- */
-- (void)playStream:(NSURL*)url;
-
-
 #pragma mark - 卸载播放器
 -(void)unInstallPlayer;
-
 
 //新字段
 
@@ -49,7 +41,7 @@
 /**
  *  播放地址本地已下载的文件，只针对mp4文件(没有后缀的文件名)
  */
-@property (nonatomic,copy)NSString * playLocalUrl;
+//@property (nonatomic,copy)NSString * playLocalUrl;
 
 
 @end
