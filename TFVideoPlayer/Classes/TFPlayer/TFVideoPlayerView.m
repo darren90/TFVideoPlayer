@@ -527,10 +527,10 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             break;
         case UIGestureRecognizerStateEnded:{
             // 移动结束也需要判断垂直或者平移
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 // 隐藏视图
                 self.forwardView.hidden = YES;
-            });
+//            });
             // 比如水平移动结束时，要快进到指定位置，如果这里没有判断，当我们调节音量完之后，会出现屏幕跳动的bug
             switch (self.panDirection) {
                 case PanDirectionHorizontalMoved:{//快进结束

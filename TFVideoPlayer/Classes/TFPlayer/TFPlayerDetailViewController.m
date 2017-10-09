@@ -37,7 +37,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.playerView.playUrl = self.playUrl;
 //    [self.playerView playerOnCellView:self.bgView];
-    [self.playerView playStream:self.playUrl];
+//    [self.playerView playStream:self.playUrl];
 }
 
 - (void)initiaize {
@@ -76,12 +76,12 @@
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     UIInterfaceOrientation interfaceOrientation = (int)(UIInterfaceOrientation)orientation;
     
-    [self.playerView removeFromSuperview];
-    
-    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.removeExisting = YES;
-    }];
-    
+//    [self.playerView removeFromSuperview];
+//
+//    [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.removeExisting = YES;
+//    }];
+
     if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationUnknown) {
         //小屏幕
         [self.playerView addSubview:self.playerView];

@@ -17,9 +17,7 @@
 // TODO
 @property (nonatomic, assign) BOOL                   isFullScreen;
 
-
-
-@property (nonatomic, strong)UIView * playerFatherView;
+@property (nonatomic, strong) UIView * playerFatherView;
 
 @end
 
@@ -120,7 +118,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self layoutIfNeeded];
+//    [self layoutIfNeeded];
     
     //横屏
 //    2017-10-08 21:07:36.307594+0800 RollClient[28221:2602665] -1-self fathe erView-frame: {{0, 0}, {667, 211}}
