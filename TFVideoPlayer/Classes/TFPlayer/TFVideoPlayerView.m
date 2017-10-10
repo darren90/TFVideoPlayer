@@ -192,12 +192,16 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         }
             break;
         case TFVideoPlayerFull:{
-            self.topControl.hidden = NO;
-            self.lockButton.hidden = NO;
-            self.lockButton.hidden = NO;
-            self.topControlHeight.constant = 55;
-            self.bottomControlHeight.constant = 50;
-            [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_shrinkscreen"] forState:UIControlStateNormal];
+            if (self.doneButton.hidden == NO) {
+                self.topControl.hidden = NO;
+                self.bottomControl.hidden = NO;
+                self.lockButton.hidden = NO;
+                self.topControlHeight.constant = 55;
+                self.bottomControlHeight.constant = 50;
+                [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_shrinkscreen"] forState:UIControlStateNormal];
+                //刚转到大屏，不隐藏状态栏以及上下控制条
+                [[UIApplication sharedApplication] setStatusBarHidden:self.bottomControl.hidden withAnimation:UIStatusBarAnimationNone];
+            }
         }
             break;
     }
@@ -360,14 +364,16 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 
 #pragma mark - 单击 手势
 - (IBAction)handleSingleTap:(id)sender{
-    
+    self.topControl.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
     switch (self.showState) {
         case TFVideoPlayerSmall:{
             self.lockButton.hidden = YES;
-            
-            self.topControl.hidden = !self.topControl.hidden;
-            self.bottomControl.hidden = self.topControl.hidden;
-            self.bigPlayButton.hidden = self.topControl.hidden;
+            self.topControl.backgroundColor = [UIColor clearColor];
+
+            self.topControl.hidden = NO;
+            self.doneButton.hidden = NO;
+            self.bottomControl.hidden = !self.bottomControl.hidden;
+            self.bigPlayButton.hidden = self.bottomControl.hidden;
             
             return;
         }
@@ -395,14 +401,14 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         self.lockButton.hidden = !self.lockButton.hidden;
         [[UIApplication sharedApplication] setStatusBarHidden:self.lockButton.hidden withAnimation:UIStatusBarAnimationFade];
     }else{
-        self.topControl.hidden = !self.topControl.hidden;
         self.bottomControl.hidden = !self.bottomControl.hidden;
-        self.bigPlayButton.hidden = !self.bigPlayButton.hidden;
+        self.topControl.hidden = self.bottomControl.hidden;
+        self.bigPlayButton.hidden = self.bottomControl.hidden;
         self.lockButton.hidden  = self.bottomControl.hidden;
         
-        [[UIApplication sharedApplication]setStatusBarHidden:self.topControl.hidden withAnimation:UIStatusBarAnimationNone];
+        [[UIApplication sharedApplication]setStatusBarHidden:self.bottomControl.hidden withAnimation:UIStatusBarAnimationNone];
     }
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 
     //添加计时器
     [self addHiddeControlTimer];
@@ -436,7 +442,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 
 -(void)hiddenTopBottom{
     [UIView animateWithDuration:0.5 animations:^{
-        if (!self.topControl.hidden) {
+        if (!self.bottomControl.hidden) {
             self.topControl.hidden = YES;
             self.bottomControl.hidden = YES;
             self.bigPlayButton.hidden = YES;
@@ -444,6 +450,8 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             switch (self.showState) {
                 case TFVideoPlayerSmall:{
                     self.lockButton.hidden = YES;
+                    self.bottomControl.hidden = NO;
+                    self.doneButton.hidden = NO;
                 }
                     break;
                 case TFVideoPlayerCell:{
@@ -451,7 +459,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
                 }
                     break;
                 case TFVideoPlayerFull:{
-                    [[UIApplication sharedApplication] setStatusBarHidden:self.topControl.hidden withAnimation:UIStatusBarAnimationNone];
+                    [[UIApplication sharedApplication] setStatusBarHidden:self.bottomControl.hidden withAnimation:UIStatusBarAnimationNone];
                 }
                     break;
                 default:
