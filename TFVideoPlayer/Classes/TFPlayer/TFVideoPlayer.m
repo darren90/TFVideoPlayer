@@ -211,6 +211,10 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
     if([self.mDelegate respondsToSelector:@selector(fulllScrenAction)]) {
         [self.mDelegate fulllScrenAction];
     }
+    
+    if ([self.delegate respondsToSelector:@selector(videoPlayer:didControlByEvent:)]) {
+        [self.delegate videoPlayer:self didControlByEvent:TFVideoPlayerControlEventTapFullScreen];
+    }
 }
 
 

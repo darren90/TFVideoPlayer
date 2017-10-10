@@ -35,7 +35,7 @@
 //    self.player.view.frame = self.bounds;
     self.backgroundColor = [UIColor blackColor];
     self.player.delegate = self;
-    self.player.mDelegate = self;
+//    self.player.mDelegate = self;
     [self addSubview:self.player.view];
 //    self.player.view.delegate = self;
     [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {

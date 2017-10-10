@@ -96,11 +96,14 @@
     if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationUnknown) {
         //小屏幕
         [self.bgView addSubview:self.playerView];
+        self.playerView.player.showState = TFVideoPlayerSmall;
         [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_offset(UIEdgeInsetsZero);
         }];
     } else {
         //大屏
+        self.playerView.player.showState = TFVideoPlayerFull;
+        
         [[UIApplication sharedApplication].keyWindow addSubview:self.playerView];
         [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.leading.top.trailing.equalTo(@0);
@@ -114,31 +117,8 @@
 
 //这个方法发生在翻转的过程中，一般用来定制翻转后各个控件的位置、大小等。
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    NSLog(@"bgView--: %@", self.bgView.subviews);
-}
-//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
 //    NSLog(@"bgView--: %@", self.bgView.subviews);
-//    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-//    UIInterfaceOrientation interfaceOrientation = (int)(UIInterfaceOrientation)orientation;
-//
-//    if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationUnknown) {
-//        //小屏幕
-//        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.mas_offset(UIEdgeInsetsZero);
-//        }];
-//        [self.bgView layoutIfNeeded];
-//    } else {
-//        //大屏
-//        [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.leading.top.trailing.equalTo(@0);
-//            make.width.equalTo(@([[UIScreen mainScreen] bounds].size.height));
-//            make.height.equalTo(@([[UIScreen mainScreen] bounds].size.width));
-//            make.center.equalTo([UIApplication sharedApplication].keyWindow);
-//        }];
-//
-//        [[UIApplication sharedApplication].keyWindow layoutIfNeeded];
-//    }
-//}
+}
 
 - (BOOL)shouldAutorotate{
     return YES;
@@ -151,12 +131,14 @@
     
     switch (event) {
         case TFVideoPlayerControlEventTapDone: {
-            [self.playerView.player pauseContent];
-//            [self saveSeekDuration];
-//            [self dismissViewControllerAnimated:YES completion:^{
-//                [self unInstallPlayer];
-//            }];
-            [self.navigationController popViewControllerAnimated:YES];
+            if (self.playerView.player.showState == TFVideoPlayerFull) {
+                 [self fulllScrenAction];
+                return;
+            } else {
+                [self.playerView.player pauseContent];
+//                [self saveSeekDuration];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
         }
             break;
         case TFVideoPlayerControlEventPause: {
@@ -166,17 +148,80 @@
             break;
             
         case TFVideoPlayerControlEventTapFullScreen: {
-            
-            
+            [self fulllScrenAction];
         }
             break;
         default:
             break;
     }
-    
-    
 }
 
+
+- (void)fulllScrenAction {
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    UIInterfaceOrientation interfaceOrientation = (int)(UIInterfaceOrientation)orientation;
+
+    switch (interfaceOrientation) {
+        case UIInterfaceOrientationPortraitUpsideDown:{
+            NSLog(@"fullScreenAction第3个旋转方向---电池栏在下");
+//            self.isFullScreen = YES;
+            self.playerView.player.showState = TFVideoPlayerFull;
+            [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+        }
+            break;
+        case UIInterfaceOrientationPortrait:{
+            NSLog(@"fullScreenAction第0个旋转方向---电池栏在上");
+            self.playerView.player.showState = TFVideoPlayerSmall;
+//            self.isFullScreen = YES;
+            [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+        }
+            break;
+        case UIInterfaceOrientationLandscapeLeft:{
+            NSLog(@"fullScreenAction第2个旋转方向---电池栏在右");
+            self.playerView.player.showState = TFVideoPlayerFull;
+//            self.isFullScreen = NO;
+            [self interfaceOrientation:UIInterfaceOrientationPortrait];
+        }
+            break;
+        case UIInterfaceOrientationLandscapeRight:{
+            NSLog(@"fullScreenAction第1个旋转方向---电池栏在左");
+//            self.isFullScreen = NO;
+            self.playerView.player.showState = TFVideoPlayerFull;
+            [self interfaceOrientation:UIInterfaceOrientationPortrait];
+        }
+            break;
+        case UIInterfaceOrientationUnknown:{
+            NSLog(@"fullScreenAction第1个旋转方向---电池栏在左");;
+            self.playerView.player.showState = TFVideoPlayerSmall;
+//            self.isFullScreen = YES;
+            [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+        }
+            break;
+        default:{
+            self.playerView.player.showState = TFVideoPlayerFull;
+            [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+        }
+            break;
+    }
+    
+    //    [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+    
+    //    [self willRotateToInterfaceOrientation:interfaceOrientation duration:0];
+}
+
+#pragma mark 强制转屏相关
+- (void)interfaceOrientation:(UIInterfaceOrientation)orientation{
+    // arc下
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector             = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        int val                  = orientation;
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+}
 
 -(void)dealloc{
     [self unInstallPlayer];
