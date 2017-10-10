@@ -108,6 +108,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 
 
 -(void)initialize {
+    self.trackBtn.hidden = YES;
     
     //1: sunViews
     self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
@@ -447,27 +448,30 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             self.bottomControl.hidden = YES;
             self.bigPlayButton.hidden = YES;
         
-            switch (self.showState) {
-                case TFVideoPlayerSmall:{
-                    self.lockButton.hidden = YES;
-                    self.bottomControl.hidden = NO;
-                    self.doneButton.hidden = NO;
-                }
-                    break;
-                case TFVideoPlayerCell:{
-                    self.lockButton.hidden = YES;
-                }
-                    break;
-                case TFVideoPlayerFull:{
-                    [[UIApplication sharedApplication] setStatusBarHidden:self.bottomControl.hidden withAnimation:UIStatusBarAnimationNone];
-                }
-                    break;
-                default:
-                    break;
-            }
+            
         }
         if (!self.isLockBtnEnable) {
             self.lockButton.hidden = YES;
+        }
+        
+        switch (self.showState) {
+            case TFVideoPlayerSmall:{
+                self.lockButton.hidden = YES;
+                self.topControl.hidden = NO;
+                self.doneButton.hidden = NO;
+                [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+            }
+                break;
+            case TFVideoPlayerCell:{
+                self.lockButton.hidden = YES;
+            }
+                break;
+            case TFVideoPlayerFull:{
+                [[UIApplication sharedApplication] setStatusBarHidden:self.bottomControl.hidden withAnimation:UIStatusBarAnimationNone];
+            }
+                break;
+            default:
+                break;
         }
     } completion:^(BOOL finished) {
         
