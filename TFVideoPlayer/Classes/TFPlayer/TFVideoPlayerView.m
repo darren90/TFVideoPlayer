@@ -41,6 +41,8 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topControlHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomControlHeight;
 
+@property (strong, nonatomic) CAGradientLayer *topGLayer;
+@property (strong, nonatomic) CAGradientLayer *bottomGLayer;
 @end
 
 @implementation TFVideoPlayerView
@@ -68,6 +70,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 - (void) awakeFromNib {
     [super awakeFromNib];
     [self initialize];
+    [self setupLayer];
 }
 
 - (void)layoutSubviews {
@@ -173,8 +176,9 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         case TFVideoPlayerSmall:{
             self.topControl.hidden = NO;
             self.lockButton.hidden = NO;
-            self.topControlHeight.constant = 40;
-            self.bottomControlHeight.constant = 40;
+            self.lockButton.hidden = YES;
+            self.topControlHeight.constant = 42;
+            self.bottomControlHeight.constant = 37;
             [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_fullscreen"] forState:UIControlStateNormal];
         }
             break;
@@ -182,12 +186,14 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             self.topControlHeight.constant = 0;
             self.topControl.hidden = YES;
             self.lockButton.hidden = YES;
+            self.lockButton.hidden = YES;
             self.bottomControlHeight.constant = 30;
             [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_fullscreen"] forState:UIControlStateNormal];
         }
             break;
         case TFVideoPlayerFull:{
             self.topControl.hidden = NO;
+            self.lockButton.hidden = NO;
             self.lockButton.hidden = NO;
             self.topControlHeight.constant = 55;
             self.bottomControlHeight.constant = 50;
@@ -354,12 +360,32 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 
 #pragma mark - 单击 手势
 - (IBAction)handleSingleTap:(id)sender{
-    if (self.showState == TFVideoPlayerCell) {
-        self.topControl.hidden = YES;
-        self.lockButton.hidden = YES;
-        self.bottomControl.hidden = !self.bottomControl.hidden;
-        
-        return;
+    
+    switch (self.showState) {
+        case TFVideoPlayerSmall:{
+            self.lockButton.hidden = YES;
+            
+            self.topControl.hidden = !self.topControl.hidden;
+            self.bottomControl.hidden = self.topControl.hidden;
+            self.bigPlayButton.hidden = self.topControl.hidden;
+            
+            return;
+        }
+            break;
+        case TFVideoPlayerCell:{
+            self.topControl.hidden = YES;
+            self.lockButton.hidden = YES;
+            self.lockButton.hidden = YES;
+            self.bottomControl.hidden = !self.bottomControl.hidden;
+            
+            return;
+        }
+            break;
+        case TFVideoPlayerFull:{
+        }
+            break;
+        default:
+            break;
     }
     
     //销毁计时器
@@ -414,7 +440,23 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             self.topControl.hidden = YES;
             self.bottomControl.hidden = YES;
             self.bigPlayButton.hidden = YES;
-            [[UIApplication sharedApplication] setStatusBarHidden:self.topControl.hidden withAnimation:UIStatusBarAnimationNone];
+        
+            switch (self.showState) {
+                case TFVideoPlayerSmall:{
+                    self.lockButton.hidden = YES;
+                }
+                    break;
+                case TFVideoPlayerCell:{
+                    self.lockButton.hidden = YES;
+                }
+                    break;
+                case TFVideoPlayerFull:{
+                    [[UIApplication sharedApplication] setStatusBarHidden:self.topControl.hidden withAnimation:UIStatusBarAnimationNone];
+                }
+                    break;
+                default:
+                    break;
+            }
         }
         if (!self.isLockBtnEnable) {
             self.lockButton.hidden = YES;
@@ -650,6 +692,38 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         if ([button isKindOfClass:[UIButton class]] && button != self.doneButton && !button.hidden) {
             rightMargin = MIN(CGRectGetMinX(button.frame), rightMargin);
         }
+    }
+}
+
+- (void)setupLayer {
+    self.topControl.backgroundColor = [UIColor clearColor];
+    self.bottomControl.backgroundColor = [UIColor clearColor];
+    
+    if (self.bottomGLayer == nil) {
+        //bottom 渐变
+        self.bottomGLayer = [[CAGradientLayer alloc] init];
+        
+        self.bottomGLayer.startPoint = CGPointMake(0, 0);
+        self.bottomGLayer.endPoint = CGPointMake(0, 1);
+        self.bottomGLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor,
+                                     (__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.5].CGColor,
+                                     (__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.9].CGColor
+                                     ];
+        self.bottomGLayer.locations =  @[@(0.2f) ,@(0.6f),@(1.0)];
+        [self.bottomControl.layer insertSublayer:self.bottomGLayer below:self.startPause.layer];
+    }
+    
+    if (self.topGLayer == nil) {
+        //top 渐变
+        self.topGLayer = [[CAGradientLayer alloc] init];
+        self.topGLayer.startPoint = CGPointMake(0, 0);
+        self.topGLayer.endPoint = CGPointMake(0, 1);
+        self.topGLayer.colors = @[(__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.9].CGColor,
+                                  (__bridge id)[[UIColor blackColor] colorWithAlphaComponent:0.6].CGColor,
+                                  (__bridge id)[UIColor clearColor].CGColor
+                                  ];
+        self.topGLayer.locations = @[@(0.2f) ,@(0.6f),@(1.0)];
+        [self.topControl.layer insertSublayer:self.topGLayer below:self.titleLabel.layer];
     }
 }
 
