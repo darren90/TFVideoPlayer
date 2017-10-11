@@ -10,4 +10,5 @@
 
 @interface TFPlayerConfig : NSObject
 
+
 @end
