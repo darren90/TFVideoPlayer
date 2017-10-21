@@ -27,3 +27,9 @@ Tonny, 1005052145@qq.com
 ## License
 
 TFVideoPlayer is available under the MIT license. See the LICENSE file for more info.
+
+
+https://github.com/yixia/Vitamio-iOS/blob/master/Doc/Vitamio_SDK_for_iOS_User_Manual_cn.md
+
+
+
