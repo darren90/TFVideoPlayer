@@ -81,7 +81,10 @@ typedef enum {
 + (TFVideoPlayer *) sharedPlayer;
 
 //正在播放的过程中切换了播放地址，进行播放的时候用这个  时间：秒
--(void)playChangeStreamUrl:(NSURL*)url title:(NSString*)title seekToPos:(long)pos;
+-(void)playChangeStreamUrl:(NSURL *)url title:(NSString *)title seekToPos:(long)pos;
+
+-(void)playStreamUrls:(NSArray *)urls title:(NSString *)title seekToPos:(long)pos;
+
 
 /** 播放 */
 - (void)playContent;

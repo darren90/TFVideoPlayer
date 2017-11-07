@@ -59,6 +59,10 @@
     [self.player playChangeStreamUrl:url title:self.topTitle seekToPos:0];
 }
 
+- (void)playStreams:(NSArray *)ulrs {
+    [self.player playStreamUrls:ulrs title:self.topTitle seekToPos:0];
+}
+
 - (void)setPlayUrl:(NSURL *)playUrl {
     _playUrl = playUrl;
  
@@ -77,23 +81,23 @@
         return;
     }
     
-//    switch (event) {
-//        case TFVideoPlayerControlEventTapDone: {
+    switch (event) {
+        case TFVideoPlayerControlEventTapDone: {
 //            [self.player pauseContent];
 //            [self saveSeekDuration];
 //            [self dismissViewControllerAnimated:YES completion:^{
-//                [self unInstallPlayer];
+             [self unInstallPlayer];
 //            }];
-//        }
-//            break;
-//        case TFVideoPlayerControlEventPause: {
-//            [self.player pauseContent];
-//            
-//        }
-//            break;
-//        default:
-//            break;
-//    }
+        }
+            break;
+        case TFVideoPlayerControlEventPause: {
+            [self.player pauseContent];
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 

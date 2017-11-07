@@ -97,10 +97,14 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
 }
 
 #pragma mark - 播放中途，切换视频URL重新进行播放（切换清晰度，切换剧集）
--(void)playChangeStreamUrl:(NSURL *)url title:(NSString*)title seekToPos:(long)pos {
+- (void)playChangeStreamUrl:(NSURL *)url title:(NSString *)title seekToPos:(long)pos {
     [self quicklyReplayMovie:url title:title seekToPos:pos];
 }
 
+- (void)playStreamUrls:(NSArray *)urls title:(NSString *)title seekToPos:(long)pos {
+    [self quicklyStopMovie];
+    [self quicklyPlaySegments:urls title:title seekToPos:pos];
+}
 
 - (void)setupObservers {
     NSNotificationCenter *def = [NSNotificationCenter defaultCenter];
@@ -125,7 +129,6 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
         self.isBeforePlaying = YES;
     }
 }
-
 
 #pragma mark - TFVideoPlayerViewDelegate
 - (void)captionButtonTapped {
@@ -447,9 +450,31 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
     self.view.progressSld.segments = @[@(0.0), @(1.0)];
 }
 
+//- (void)setDataSegmentsSource:(NSString*)baseURL fileList:(NSArray*)list;
+
+-(void)quicklyPlaySegments:(NSArray *)list title:(NSString*)title seekToPos:(long)pos {
+    if (list.count ==0 ) {
+        return;
+    }
+    
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+    NSString *docDir = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
+    NSLog(@"NAL &&& Doc: %@", docDir);
+    
+    [self.mMPayer setDataSegmentsSource:nil fileList:list];
+    
+    self.view.titleLabel.text = title;
+    
+    if (pos > 5)  pos -= 5;//时间自动向前5秒，提升用户体验
+    self.lastWatchPos = pos*1000;//lastWatchPos：秒，pos：毫秒   -- 1秒=1000毫秒
+    
+    [self.mMPayer prepareAsync];
+    [self.view startActivityWithMsg:@"Loading..."];
+}
 
 #pragma mark - Convention Methods
--(void)quicklyPlayMovie:(NSURL*)fileURL title:(NSString*)title seekToPos:(long)pos {
+-(void)quicklyPlayMovie:(NSURL *)fileURL title:(NSString *)title seekToPos:(long)pos {
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     //	[self setBtnEnableStatus:NO];
 

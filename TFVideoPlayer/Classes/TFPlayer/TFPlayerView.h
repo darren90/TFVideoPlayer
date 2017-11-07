@@ -20,8 +20,9 @@
  *
  *  @param url 播放地址
  */
-- (void)playStream:(NSURL*)url;
+- (void)playStream:(NSURL *)url;
 
+- (void)playStreams:(NSArray *)ulrs;
 
 #pragma mark - 卸载播放器
 -(void)unInstallPlayer;
