@@ -371,10 +371,10 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             self.lockButton.hidden = YES;
             self.topControl.backgroundColor = [UIColor clearColor];
 
-            self.topControl.hidden = NO;
-            self.doneButton.hidden = NO;
             self.bottomControl.hidden = !self.bottomControl.hidden;
             self.bigPlayButton.hidden = self.bottomControl.hidden;
+            self.topControl.hidden = YES;//NO;
+            self.doneButton.hidden = YES;//NO;
             
             return;
         }
@@ -457,8 +457,8 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         switch (self.showState) {
             case TFVideoPlayerSmall:{
                 self.lockButton.hidden = YES;
-                self.topControl.hidden = NO;
-                self.doneButton.hidden = NO;
+                self.topControl.hidden = YES;
+                self.doneButton.hidden = YES;
                 [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
             }
                 break;
