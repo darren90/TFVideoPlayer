@@ -13,7 +13,15 @@
 
 @property (nonatomic, strong) TFVideoPlayer* player;
 
-@property (nonatomic,copy)NSURL * playUrl;
+
+/**
+ *  播放地址
+ */
+@property (nonatomic, copy) NSURL * playUrl;
+/**
+ *  播放标题
+ */
+@property (nonatomic, copy) NSString *title;
 
 /**
  *  小屏播放器要用到
@@ -22,7 +30,7 @@
  */
 - (void)playStream:(NSURL *)url;
 
-- (void)playStreams:(NSArray *)ulrs;
+//- (void)playStreams:(NSArray *)ulrs;
 
 #pragma mark - 卸载播放器
 -(void)unInstallPlayer;

@@ -43,6 +43,20 @@
     return NO;
 }
 
++ (BOOL)iPhoneX {
+    if (@available(iOS 11.0, *)){
+        return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && (NSInteger)[UIScreen mainScreen].nativeBounds.size.height == 2436; //nativeBounds
+    }
+    return NO;
+}
+
++ (CGFloat)homeIndeicatrHeight {
+    return [self iPhoneX] ? 34 : 0;
+}
+
++ (CGFloat)statusBarHeight {
+    return [self iPhoneX] ? 44 : 20;
+}
 
 
 @end

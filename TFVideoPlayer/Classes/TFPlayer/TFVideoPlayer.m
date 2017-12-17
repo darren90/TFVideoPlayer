@@ -379,10 +379,10 @@ static  TFVideoPlayer *tfVideoPlayer = nil;
     if (self.isPlayLocalFile) return;
     self.progressDragging = YES;
 
-    if (![TFPlayerTools isLocalMedia:self.videoURL]) {
-        [player pause];
-        [self.view startActivityWithMsg:@"Buffering... 0%"];
-    }
+//    if (![TFPlayerTools isLocalMedia:self.videoURL]) {
+//        [player pause];
+//        [self.view startActivityWithMsg:@"Buffering... 0%"];
+//    }
 }
 
 - (void)mediaPlayer:(VMediaPlayer *)player bufferingUpdate:(id)arg {

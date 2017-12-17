@@ -117,7 +117,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     
     self.titleLabel.font = RRTHMEFONT(DEVICEVALUE(22.0f, 14.0f));
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.titleLabel.text = @"";
+//    self.titleLabel.text = @"";
     
     self.curPosLbl.font = RRTHMEFONT(DEVICEVALUE(16.0f, 12.0f));
     self.curPosLbl.textColor = [UIColor whiteColor];
@@ -175,8 +175,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
     
     switch (showState) {
         case TFVideoPlayerSmall:{
-            self.topControl.hidden = NO;
-            self.lockButton.hidden = NO;
+            self.topControl.hidden = YES;
             self.lockButton.hidden = YES;
             self.topControlHeight.constant = 42;
             self.bottomControlHeight.constant = 37;
@@ -193,7 +192,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
         }
             break;
         case TFVideoPlayerFull:{
-            if (self.doneButton.hidden == NO) {
+//            if (self.doneButton.hidden == NO) {
                 self.topControl.hidden = NO;
                 self.bottomControl.hidden = NO;
                 self.lockButton.hidden = NO;
@@ -202,7 +201,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
                 [self.fullscreenButton setImage:[UIImage imageNamed:@"TFPlayer_shrinkscreen"] forState:UIControlStateNormal];
                 //刚转到大屏，不隐藏状态栏以及上下控制条
                 [[UIApplication sharedApplication] setStatusBarHidden:self.bottomControl.hidden withAnimation:UIStatusBarAnimationNone];
-            }
+//            }
         }
             break;
     }
@@ -365,16 +364,16 @@ typedef NS_ENUM(NSInteger,PanDirection) {
 
 #pragma mark - 单击 手势
 - (IBAction)handleSingleTap:(id)sender{
-    self.topControl.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+//    self.topControl.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
     switch (self.showState) {
         case TFVideoPlayerSmall:{
-            self.lockButton.hidden = YES;
-            self.topControl.backgroundColor = [UIColor clearColor];
+            self.topControl.hidden = YES;
+//            self.topControl.backgroundColor = [UIColor clearColor];
 
             self.bottomControl.hidden = !self.bottomControl.hidden;
             self.bigPlayButton.hidden = self.bottomControl.hidden;
             self.topControl.hidden = YES;//NO;
-            self.doneButton.hidden = YES;//NO;
+            self.doneButton.hidden = NO;
             
             return;
         }
@@ -447,8 +446,6 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             self.topControl.hidden = YES;
             self.bottomControl.hidden = YES;
             self.bigPlayButton.hidden = YES;
-        
-            
         }
         if (!self.isLockBtnEnable) {
             self.lockButton.hidden = YES;
@@ -458,7 +455,7 @@ typedef NS_ENUM(NSInteger,PanDirection) {
             case TFVideoPlayerSmall:{
                 self.lockButton.hidden = YES;
                 self.topControl.hidden = YES;
-                self.doneButton.hidden = YES;
+                self.topControl.hidden = YES;
                 [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
             }
                 break;

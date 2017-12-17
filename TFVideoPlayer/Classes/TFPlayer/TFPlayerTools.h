@@ -14,4 +14,8 @@
 
 +(BOOL)isLocalMedia:(NSURL*)url;
 
++ (CGFloat)homeIndeicatrHeight;
+
++ (CGFloat)statusBarHeight;
+
 @end

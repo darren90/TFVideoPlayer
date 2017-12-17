@@ -75,6 +75,10 @@
     [self.player playChangeStreamUrl:playUrl title:self.topTitle seekToPos:0];
 }
 
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    self.player.view.titleLabel.text = title;
+}
 
 - (void)videoPlayer:(TFVideoPlayer*)videoPlayer didControlByEvent:(TFVideoPlayerControlEvent)event{
     if (self.player.view.isLockBtnEnable) {
@@ -99,7 +103,6 @@
             break;
     }
 }
-
 
 - (void)playerOnCellView:(UIView *)cellView {
     self.playerFatherView = cellView;

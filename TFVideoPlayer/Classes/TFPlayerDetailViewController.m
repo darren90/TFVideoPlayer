@@ -8,12 +8,15 @@
 #import "TFPlayerDetailViewController.h"
 #import "TFPlayerView.h"
 #import "Masonry.h"
+#import "TFPlayerTools.h"
+//#import "RollVideoCell.h"
 
-@interface TFPlayerDetailViewController ()<TFVideoPlayerDelegate>
+@interface TFPlayerDetailViewController ()<TFVideoPlayerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) TFPlayerView *playerView;
-//@property (nonatomic, strong) UIView *redView;
+@property (nonatomic, strong) UIButton *backBtn;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -32,12 +35,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initTableView];
     [self initiaize];
 
     self.view.backgroundColor = [UIColor whiteColor];
     self.playerView.playUrl = self.playUrl;
+    self.playerView.title = self.title;
 //    [self.playerView playerOnCellView:self.bgView];
 //    [self.playerView playStream:self.playUrl];
+}
+
+- (void)initTableView {
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    [self.view addSubview:self.tableView];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_offset(UIEdgeInsetsZero);
+    }];
+    self.tableView.contentInset = UIEdgeInsetsMake(self.view.frame.size.width * 9 / 16.0, 0, 0, 0);
+    self.tableView.tableHeaderView = nil;
 }
 
 - (void)initiaize {
@@ -46,8 +63,9 @@
 //    self.bgView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 9 / 16.0);
     self.bgView.backgroundColor = [UIColor brownColor];
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(@([TFPlayerTools statusBarHeight]));
         make.leading.top.trailing.equalTo(self.view);
-        make.height.mas_equalTo(@(self.view.frame.size.width * 9 / 16.0));
+        make.height.mas_equalTo(@(self.view.frame.size.width * 9 / 16.0 + [TFPlayerTools statusBarHeight]));
     }];
 
     
@@ -58,12 +76,16 @@
          make.edges.mas_offset(UIEdgeInsetsZero);
      }];
     
-//    self.redView = [[UIView alloc] init];
-//    [self.bgView addSubview:self.redView];
-//    self.redView.backgroundColor = [UIColor redColor];
-//    [self.redView mas_makeConstraints:^(MASConstraintMaker *make) {
-//         make.edges.mas_offset(UIEdgeInsetsZero);
-//     }];
+    self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.backBtn setImage:[UIImage imageNamed:@"nav_btn_back_n.png"] forState:UIControlStateNormal];
+    [self.view addSubview:self.backBtn];
+    [self.backBtn addTarget:self action:@selector(bacAciton) forControlEvents:UIControlEventTouchUpInside];
+    self.backBtn.frame = CGRectMake(0, 12, 40, 60);
+//    self.backBtn.backgroundColor = [UIColor blueColor];
+}
+
+- (void)bacAciton {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,10 +153,10 @@
     
     switch (event) {
         case TFVideoPlayerControlEventTapDone: {
-            if (self.playerView.player.showState == TFVideoPlayerFull) {
-                 [self fulllScrenAction];
+            if (self.playerView.player.showState == TFVideoPlayerFull) { //大屏状态下
+                [self fulllScrenAction];
                 return;
-            } else {
+            } else {    //小屏幕状态下
                 [self.playerView.player pauseContent];
 //                [self saveSeekDuration];
                 [self.navigationController popViewControllerAnimated:YES];
@@ -207,6 +229,44 @@
     //    [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
     
     //    [self willRotateToInterfaceOrientation:interfaceOrientation duration:0];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.rowHeight;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"仿网易新闻客户端: %@", @(indexPath.row)];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.0001;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0001;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"indexPath.row)");
+    NSLog(@"%@",@(indexPath.row));
 }
 
 #pragma mark 强制转屏相关
