@@ -43,5 +43,4 @@
  */
 //@property (nonatomic,copy)NSString * playLocalUrl;
 
-
 @end
