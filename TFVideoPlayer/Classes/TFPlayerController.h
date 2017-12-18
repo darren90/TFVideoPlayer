@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TFPlayer.h"
 
+//no use
 @interface TFPlayerController : UIViewController
 
 @property (nonatomic, strong) TFVideoPlayer* player;
