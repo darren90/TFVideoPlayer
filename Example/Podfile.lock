@@ -1,5 +1,7 @@
 PODS:
-  - TFVideoPlayer (0.0.2)
+  - Masonry (1.0.2)
+  - TFVideoPlayer (0.0.2):
+    - Masonry (~> 1.0.2)
 
 DEPENDENCIES:
   - TFVideoPlayer (from `../TFVideoPlayer.podspec`)
@@ -9,7 +11,8 @@ EXTERNAL SOURCES:
     :path: ../TFVideoPlayer.podspec
 
 SPEC CHECKSUMS:
-  TFVideoPlayer: eb49eff4502233519ab9df455bfbcd6302cabae4
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  TFVideoPlayer: a19540e652124a7aab44316ac512d62c2007a953
 
 PODFILE CHECKSUM: 3a5a0433a320216d58abcc3ecb16775e6b91a15a
 
